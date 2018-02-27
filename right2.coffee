@@ -1,4 +1,4 @@
-command: "Pecan/scripts/battery"
+command: "bash Pecan/scripts/battery"
 
 refreshFrequency: 1000 # ms
 
