@@ -1,1 +1,169 @@
-s
+/* Pecan is a bar for Ubersicht */
+/* Written by Daniel Neemann */
+
+// Import Colors
+@import "/Users/zzzeyez/.cache/wal/colors.scss";
+
+:root {
+
+	/* Define your resolution */
+	--monitorwidth: 1440px;
+	--monitorheight: 900px;
+
+	/* Choose background colors, ordered from left to right */
+	/* Set --bgcenter to "none" to have date's background same as bar */
+	--bg: $color7;
+	--bgleft: $color1;
+	--bgleft2: $color2;
+	--bgcenter: none;
+	--bgright2: $color4;
+	--bgright: $color5;
+
+	/* Opacity.  Change --opacitycenter to 0 in order to hide date */
+	/* --opacity affects --border, so set it to 0 if you would like */
+	/* for every widget to appear independent. */
+	--opacity: 0.9;
+	--opacitysides: 0.9;
+	--opacitycenter: 0.9;
+
+	/* Choose foreground colors */
+	--fg: $color0;
+	--fgcenter: $color0;
+
+	/* Entire bar's outer padding (use --border for space between widgets) */
+	--paddingleft: 400px;
+	--paddingright: 400px;
+	--paddingv: 30px;
+
+	/* Inner-horizontal padding.  --height determines inner-vertical padding */
+	--textpadding: 4ch;
+
+	/* Bar's total height including --border and excluding padding */
+	--height: 40px;
+
+	/* Mono font recommended (alignment depends on character width) */
+	--font: SF Mono;
+	--fontsize: 11px;
+
+	/* Border size.  Also functions as space between widgets, */
+	/* so set --opacity to 0 if you want widgets to appear independent */
+	--border: 1px;
+
+}
+
+/* Get monitor width */
+.screen {
+	width: var(--monitorwidth);
+	height: var(--monitorheight);
+}
+
+/* Bar background */
+.background {
+	background-color: var(--bg);
+	display: block;
+	position: absolute;
+  	height: var(--height);
+	left: 0px;
+	right: 0px;
+	margin: var(--paddingv) var(--paddingright) var(--paddingv) var(--paddingleft);
+	opacity: var(--opacity);
+	z-index: -1;
+	box-shadow: 0px 2px 8px 2px rgba(0,0,0,0.17);
+}
+
+/* Workspace indicator -- far left -- requires ChunkWM */
+.left {
+	-webkit-font-smoothing: antialiased;
+	color: var(--fg);
+	display: block;
+	position: relative;
+	background-color: var(--bgleft);
+	opacity: var(--opacitysides);
+	font: var(--fontsize) var(--font);
+	left: var(--paddingleft);
+	padding: 0px var(--textpadding);
+	margin: calc(var(--paddingv) + var(--border)) var(--border);
+	line-height: calc(var(--height) - calc(var(--border) * 2);
+}
+
+/* Network bandwidth -- 2nd to left -- requires ifstat */
+.left2 {
+	background-color: var(--bgleft2);
+	opacity: var(--opacitysides);
+	color: var(--fg);
+	-webkit-font-smoothing: antialiased;
+	position: relative;
+	display: block;
+	font: var(--fontsize) var(--font);
+	left: calc(var(--paddingleft) + calc(var(--textpadding) * 2) + 1ch + var(--border));
+	padding: 0px var(--textpadding);
+	margin: var(--border);
+	top: var(--paddingv);
+	line-height: calc(var(--height) - calc(var(--border) * 2);
+}
+
+/* Date -- third to left -- set --opacitycenter to 0 to hide */
+.center {
+	color: var(--fgcenter);
+	background-color: var(--bgcenter);
+	opacity: var(--opacitycenter);
+	-webkit-font-smoothing: antialiased;
+	position: absolute;
+	display: inline-block;
+	font: var(--fontsize) var(--font);
+	padding: 0px var(--textpadding);
+	width: auto;
+	left: 50%;
+	transform: translate(-50%);
+	margin: var(--border);
+	line-height:  calc(var(--height) - calc(var(--border) * 2);
+	text-align: center;
+}
+
+/* This is a container to align the center widget */
+.holder {
+	background-color: none;
+	display: block;
+	position: absolute;
+  	height: var(--height);
+	left: 0px;
+	right: 0px;
+	margin: var(--paddingv) var(--paddingright) var(--paddingv) var(--paddingleft);
+}
+
+/* Battery percentage -- 4th to left */
+.right2 {
+	-webkit-font-smoothing: antialiased;
+	color: var(--fg);
+ 	display: block;
+	position: relative;
+	background-color: var(--bgright2);
+	opacity: var(--opacitysides);
+	font: var(--fontsize) var(--font);
+	padding: 0px var(--textpadding);
+	margin: var(--border);
+	top: var(--paddingv);
+	float: right;
+	right: calc(var(--paddingright) + calc(var(--textpadding) * 2) + 9.3ch + calc(var(--border) * 2));
+	margin: var(--border);
+	line-height:  calc(var(--height) - calc(var(--border) * 2));
+}
+
+/* Clock -- 5th to right */
+.right {
+	-webkit-font-smoothing: antialiased;
+	color: var(--fg);
+ 	display: block;
+	position: relative;
+	background-color: var(--bgright);
+	opacity: var(--opacitysides);
+	font: var(--fontsize) var(--font);
+	padding: 0px var(--textpadding);
+	margin: var(--border);
+	top: var(--paddingv);
+	float: right;
+	right: var(--paddingright);
+	margin-left: auto;
+	margin-right: var(--border);
+	line-height:  calc(var(--height) - calc(var(--border) * 2);
+}
