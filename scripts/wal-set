@@ -1,1 +1,8 @@
-s
+#!/usr/bin/env bash
+
+sassc --style expanded "${HOME}/uber/Pecan/scss/style.scss" > "${HOME}/uber/Pecan/style.css" &&
+osascript <<EOD
+  tell application "Übersicht"
+  	refresh widget id "Pecan-background-coffee"
+  end tell
+EOD
