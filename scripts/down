@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-/usr/local/bin/ifstat -n -z -i en0 -S 1 1 | awk 'FNR == 3 {print $2}'
