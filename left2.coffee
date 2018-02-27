@@ -1,4 +1,4 @@
-command: "echo '↓' && bash Pecan/scripts/down && echo '↑' && bash Pecan/scripts/up"
+command: "bash Pecan/scripts/network"
 
 refreshFrequency: 1000 # ms
 
