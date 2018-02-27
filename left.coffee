@@ -1,4 +1,4 @@
-command: "/usr/local/bin/chunkc tiling::query --desktop id"
+command: "bash Pecan/scripts/ws"
 
 refreshFrequency: 1000 # ms
 
