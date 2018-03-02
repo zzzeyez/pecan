@@ -17,7 +17,7 @@ Pecan requires [Übersicht](http://tracesof.net/uebersicht/).  Once Übersicht i
 git clone https://github.com/zzzeyez/Pecan.git $HOME/Library/Application\ Support/Übersicht/widgets/Pecan
 ```
 
-If Übersicht is running, then the bar should be appear.
+If Übersicht is running, then the bar should appear.
 
 ## Optional features
 
