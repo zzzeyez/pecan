@@ -14,43 +14,43 @@
 	/* Set --bgcenter to "none" to have date's background same as bar */
 	--bg: $color0;
 	--bgleft: $color1;
-	--bgleft2: $color3;
-	--bgcenter: $color4;
-	--bgright2: $color5;
+	--bgleft2: $color8;
+	--bgcenter: $color0;
+	--bgright2: $color8;
 	--bgright: $color6;
 
 	/* Choose foreground colors */
 	--fgleft: $color0;
-	--fgleft2: $color0;
-	--fgcenter: $color0;
-	--fgright2: $color0;
+	--fgleft2: $color1;
+	--fgcenter: $color7;
+	--fgright2: $color6;
 	--fgright: $color0;
 
 	/* Opacity.  Change --opacitycenter to 0 in order to hide date */
 	/* --opacity affects --border, so set it to 0 if you would like */
 	/* for every widget to appear independent. */
-	--opacity: 0;
+	--opacity: 1;
 	--opacitysides: 1;
 	--opacitycenter: 1;
 
 	/* Entire bar's outer padding (use --border for space between widgets) */
-	--paddingleft: 0px;
-	--paddingright: 0px;
-	--paddingv: 0px;
+	--paddingleft: 300px;
+	--paddingright: 300px;
+	--paddingv: 10px;
 
 	/* Inner-horizontal padding.  --height determines inner-vertical padding */
 	--textpadding: 2ch;
 
 	/* Bar's total height including --border and excluding padding */
-	--height: 43px;
+	--height: 25px;
 
 	/* Mono font recommended (alignment depends on character width) */
-	--font: SF Mono;
+	--font: SF Mono, monospace;
 	--fontsize: 11px;
 
 	/* Border size.  Also functions as space between widgets, */
 	/* so set --opacity to 0 if you want widgets to appear independent */
-	--border: 9px;
+	--border: 0px;
 
 }
 
@@ -147,7 +147,7 @@
 	margin: var(--border);
 	top: var(--paddingv);
 	float: right;
-	right: calc(var(--paddingright) + calc(var(--textpadding) * 2) + 9ch + 2px + var(--border));
+	right: calc(var(--paddingright) + calc(var(--textpadding) * 2) + 9ch + 2px + calc(var(--border) * 2));
 	margin: var(--border);
 	line-height:  calc(var(--height) - calc(var(--border) * 2));
 }
