@@ -7,37 +7,37 @@
   /* Choose background colors, ordered from left to right */
   /* Set --bgcenter to "none" to have date's background same as bar */
   --bg: #141414;
-  --bgleft: #B1B3B0;
-  --bgleft2: #BDC2B1;
-  --bgcenter: #CAC79A;
-  --bgright2: #CDC8B4;
-  --bgright: #B5BBC3;
+  --bgleft: #CE928F;
+  --bgleft2: #2c2b2b;
+  --bgcenter: #141414;
+  --bgright2: #2c2b2b;
+  --bgright: #C8BFC0;
   /* Choose foreground colors */
   --fgleft: #141414;
-  --fgleft2: #141414;
-  --fgcenter: #141414;
-  --fgright2: #141414;
+  --fgleft2: #CE928F;
+  --fgcenter: #e0dbd8;
+  --fgright2: #C8BFC0;
   --fgright: #141414;
   /* Opacity.  Change --opacitycenter to 0 in order to hide date */
   /* --opacity affects --border, so set it to 0 if you would like */
   /* for every widget to appear independent. */
-  --opacity: 0;
+  --opacity: 1;
   --opacitysides: 1;
   --opacitycenter: 1;
   /* Entire bar's outer padding (use --border for space between widgets) */
-  --paddingleft: 0px;
-  --paddingright: 0px;
-  --paddingv: 0px;
+  --paddingleft: 300px;
+  --paddingright: 300px;
+  --paddingv: 10px;
   /* Inner-horizontal padding.  --height determines inner-vertical padding */
   --textpadding: 2ch;
   /* Bar's total height including --border and excluding padding */
-  --height: 43px;
+  --height: 25px;
   /* Mono font recommended (alignment depends on character width) */
-  --font: SF Mono;
+  --font: SF Mono, monospace;
   --fontsize: 11px;
   /* Border size.  Also functions as space between widgets, */
   /* so set --opacity to 0 if you want widgets to appear independent */
-  --border: 9px;
+  --border: 0px;
 }
 
 /* Get monitor width */
@@ -133,7 +133,7 @@
   margin: var(--border);
   top: var(--paddingv);
   float: right;
-  right: calc(var(--paddingright) + calc(var(--textpadding) * 2) + 9ch + 2px + var(--border));
+  right: calc(var(--paddingright) + calc(var(--textpadding) * 2) + 9ch + 2px + calc(var(--border) * 2));
   margin: var(--border);
   line-height: calc(var(--height) - calc(var(--border) * 2));
 }
