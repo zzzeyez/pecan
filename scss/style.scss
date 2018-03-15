@@ -12,34 +12,37 @@
 
 	/* Choose background colors, ordered from left to right */
 	/* Set --bgcenter to "none" to have date's background same as bar */
-	--bg: $color7;
+	--bg: $color0;
 	--bgleft: $color1;
-	--bgleft2: $color2;
-	--bgcenter: none;
-	--bgright2: $color4;
-	--bgright: $color5;
+	--bgleft2: $color3;
+	--bgcenter: $color4;
+	--bgright2: $color5;
+	--bgright: $color6;
+
+	/* Choose foreground colors */
+	--fgleft: $color0;
+	--fgleft2: $color0;
+	--fgcenter: $color0;
+	--fgright2: $color0;
+	--fgright: $color0;
 
 	/* Opacity.  Change --opacitycenter to 0 in order to hide date */
 	/* --opacity affects --border, so set it to 0 if you would like */
 	/* for every widget to appear independent. */
-	--opacity: 0.9;
-	--opacitysides: 0.9;
-	--opacitycenter: 0.9;
-
-	/* Choose foreground colors */
-	--fg: $color0;
-	--fgcenter: $color0;
+	--opacity: 0;
+	--opacitysides: 1;
+	--opacitycenter: 1;
 
 	/* Entire bar's outer padding (use --border for space between widgets) */
-	--paddingleft: 400px;
-	--paddingright: 400px;
-	--paddingv: 30px;
+	--paddingleft: 0px;
+	--paddingright: 0px;
+	--paddingv: 0px;
 
 	/* Inner-horizontal padding.  --height determines inner-vertical padding */
-	--textpadding: 4ch;
+	--textpadding: 2ch;
 
 	/* Bar's total height including --border and excluding padding */
-	--height: 40px;
+	--height: 43px;
 
 	/* Mono font recommended (alignment depends on character width) */
 	--font: SF Mono;
@@ -47,7 +50,7 @@
 
 	/* Border size.  Also functions as space between widgets, */
 	/* so set --opacity to 0 if you want widgets to appear independent */
-	--border: 1px;
+	--border: 9px;
 
 }
 
@@ -68,13 +71,13 @@
 	margin: var(--paddingv) var(--paddingright) var(--paddingv) var(--paddingleft);
 	opacity: var(--opacity);
 	z-index: -1;
-	box-shadow: 0px 2px 8px 2px rgba(0,0,0,0.17);
+	box-shadow: 0px 2px 8px 2px rgba(0,0,0,0.25);
 }
 
 /* Workspace indicator -- far left -- requires ChunkWM */
 .left {
 	-webkit-font-smoothing: antialiased;
-	color: var(--fg);
+	color: var(--fgleft);
 	display: block;
 	position: relative;
 	background-color: var(--bgleft);
@@ -90,7 +93,7 @@
 .left2 {
 	background-color: var(--bgleft2);
 	opacity: var(--opacitysides);
-	color: var(--fg);
+	color: var(--fgleft2);
 	-webkit-font-smoothing: antialiased;
 	position: relative;
 	display: block;
@@ -134,7 +137,7 @@
 /* Battery percentage -- 4th to left */
 .right2 {
 	-webkit-font-smoothing: antialiased;
-	color: var(--fg);
+	color: var(--fgright2);
  	display: block;
 	position: relative;
 	background-color: var(--bgright2);
@@ -144,7 +147,7 @@
 	margin: var(--border);
 	top: var(--paddingv);
 	float: right;
-	right: calc(var(--paddingright) + calc(var(--textpadding) * 2) + 9.3ch + calc(var(--border) * 2));
+	right: calc(var(--paddingright) + calc(var(--textpadding) * 2) + 9ch + 2px + var(--border));
 	margin: var(--border);
 	line-height:  calc(var(--height) - calc(var(--border) * 2));
 }
@@ -152,7 +155,7 @@
 /* Clock -- 5th to left */
 .right {
 	-webkit-font-smoothing: antialiased;
-	color: var(--fg);
+	color: var(--fgright);
  	display: block;
 	position: relative;
 	background-color: var(--bgright);
