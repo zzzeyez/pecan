@@ -7,8 +7,8 @@
 :root {
 
 	/* Define your resolution */
-	--monitorwidth: 1440px;
-	--monitorheight: 900px;
+	--monitorwidth: 100vw;
+	--monitorheight: 100vh;
 
 	/* Choose background colors, ordered from left to right */
 	/* Set --bgcenter to "none" to have date's background same as bar */
@@ -45,7 +45,7 @@
 	--height: 25px;
 
 	/* Mono font recommended (alignment depends on character width) */
-	--font: SF Mono, monospace;
+	--font: scientifica, SF Mono, monospace;
 	--fontsize: 11px;
 
 	/* Border size.  Also functions as space between widgets, */

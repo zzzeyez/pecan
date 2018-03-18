@@ -51,7 +51,7 @@ brew install sassc
 And then you must change the username at the top of `scss/style.scss` to that of your own:
 
 ```
-nvim ~/Library/Application\ Support/Übersicht/widgets/Pecan/scss/style.scss
+sed -i -e "s/zzzeyez/$USER/g" ~/Library/Application\ Support/Übersicht/widgets/Pecan/scss/style.scss
 ```
   
 Now you can run the script to use Wal's palettes:

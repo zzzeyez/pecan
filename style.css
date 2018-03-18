@@ -2,21 +2,21 @@
 /* Written by Daniel Neemann */
 :root {
   /* Define your resolution */
-  --monitorwidth: 1440px;
-  --monitorheight: 900px;
+  --monitorwidth: 100vw;
+  --monitorheight: 100vh;
   /* Choose background colors, ordered from left to right */
   /* Set --bgcenter to "none" to have date's background same as bar */
   --bg: #141414;
-  --bgleft: #CE928F;
-  --bgleft2: #2c2b2b;
+  --bgleft: #7D7B85;
+  --bgleft2: #2d2c2a;
   --bgcenter: #141414;
-  --bgright2: #2c2b2b;
-  --bgright: #C8BFC0;
+  --bgright2: #2d2c2a;
+  --bgright: #F9D2B1;
   /* Choose foreground colors */
   --fgleft: #141414;
-  --fgleft2: #CE928F;
-  --fgcenter: #e0dbd8;
-  --fgright2: #C8BFC0;
+  --fgleft2: #7D7B85;
+  --fgcenter: #e5ded7;
+  --fgright2: #F9D2B1;
   --fgright: #141414;
   /* Opacity.  Change --opacitycenter to 0 in order to hide date */
   /* --opacity affects --border, so set it to 0 if you would like */
@@ -33,7 +33,7 @@
   /* Bar's total height including --border and excluding padding */
   --height: 25px;
   /* Mono font recommended (alignment depends on character width) */
-  --font: SF Mono, monospace;
+  --font: scientifica, SF Mono, monospace;
   --fontsize: 11px;
   /* Border size.  Also functions as space between widgets, */
   /* so set --opacity to 0 if you want widgets to appear independent */
