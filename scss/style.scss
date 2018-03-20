@@ -6,121 +6,142 @@
 
 :root {
 
-	/* Define your resolution */
-	--monitorwidth: 100vw;
-	--monitorheight: 100vh;
-
 	/* Choose background colors, ordered from left to right */
-	/* Set --bgcenter to "none" to have date's background same as bar */
-	--bg: $color0;
-	--bgleft: $color1;
-	--bgleft2: $color8;
-	--bgcenter: $color0;
-	--bgright2: $color8;
-	--bgright: $color6;
+	/* Set --pecan-bg-center to "none" to have date's background same as bar */
+	--pecan-bg: $color0;
+	--pecan-bg-left: $color1;
+	--pecan-bg-left2: $color8;
+	--pecan-bg-center: $color0;
+	--pecan-bg-right2: $color8;
+	--pecan-bg-right: $color6;
 
 	/* Choose foreground colors */
-	--fgleft: $color0;
-	--fgleft2: $color1;
-	--fgcenter: $color7;
-	--fgright2: $color6;
-	--fgright: $color0;
+	--pecan-fg-left: $color0;
+	--pecan-fg-left2: $color1;
+	--pecan-fg-center: $color7;
+	--pecan-fg-right2: $color6;
+	--pecan-fg-right: $color0;
 
-	/* Opacity.  Change --opacitycenter to 0 in order to hide date */
-	/* --opacity affects --border, so set it to 0 if you would like */
+	/* Opacity.  Change --pecan-opacity-center to 0 in order to hide date */
+	/* --pecan-opacity affects --pecan-border, so set it to 0 if you would like */
 	/* for every widget to appear independent. */
-	--opacity: 1;
-	--opacitysides: 1;
-	--opacitycenter: 1;
+	--pecan-opacity: 1;
+	--pecan-opacity-sides: 1;
+	--pecan-opacity-center: 1;
 
-	/* Entire bar's outer padding (use --border for space between widgets) */
-	--paddingleft: 300px;
-	--paddingright: 300px;
-	--paddingv: 10px;
+	/* Shadow */
+	--pecan-shadow: 0px 4px 10px 4px rgba(0,0,0,0.10);
 
-	/* Inner-horizontal padding.  --height determines inner-vertical padding */
-	--textpadding: 2ch;
+	/* Entire bar's outer padding (use --pecan-border for space between widgets) */
+	--pecan-padding-left: 400px;
+	--pecan-padding-right: 400px;
+	--pecan-padding-v: 20px;
 
-	/* Bar's total height including --border and excluding padding */
-	--height: 25px;
+	/* Inner-horizontal padding.  --pecan-height determines inner-vertical padding */
+	--pecan-text-padding: 3ch;
+
+	/* Bar's total height including --pecan-border and excluding padding */
+	--pecan-height: 35px;
 
 	/* Mono font recommended (alignment depends on character width) */
-	--font: scientifica, SF Mono, monospace;
-	--fontsize: 11px;
+	--pecan-font: 12px SF Mono;
+	--pecan-font-style: none;
 
 	/* Border size.  Also functions as space between widgets, */
-	/* so set --opacity to 0 if you want widgets to appear independent */
-	--border: 0px;
+	/* so set --pecan-opacity to 0 if you want widgets to appear independent */
+	--pecan-border: 0px;
+
+	/* Rounded corner radius */
+	/* Inner radius is best suited for when widgets appear independent */
+	/* by setting --pecan-opacity to 0 */
+	--pecan-border-radius: 5px;
+	--pecan-border-radius-inner: 0px;
 
 }
 
 /* Get monitor width */
 .screen {
-	width: var(--monitorwidth);
-	height: var(--monitorheight);
+	width: 100vw;
+	height: 100vh;
 }
 
 /* Bar background */
 .background {
-	background-color: var(--bg);
+	background-color: var(--pecan-bg);
 	display: block;
 	position: absolute;
-  	height: var(--height);
+  	height: var(--pecan-height);
 	left: 0px;
 	right: 0px;
-	margin: var(--paddingv) var(--paddingright) var(--paddingv) var(--paddingleft);
-	opacity: var(--opacity);
+	margin: var(--pecan-padding-v) var(--pecan-padding-right) 0 var(--pecan-padding-left);
+	opacity: var(--pecan-opacity);
 	z-index: -1;
-	box-shadow: 0px 2px 8px 2px rgba(0,0,0,0.25);
+	box-shadow: var(--pecan-shadow);
+	border-top-left-radius: calc(var(--pecan-border) + 1px + var(--pecan-border-radius));
+	border-top-right-radius: calc(var(--pecan-border) + 1px + var(--pecan-border-radius));
+	border-bottom-right-radius: calc(var(--pecan-border) + 1px + var(--pecan-border-radius));
+	border-bottom-left-radius: calc(var(--pecan-border) + 1px + var(--pecan-border-radius));
 }
 
-/* Workspace indicator -- far left -- requires ChunkWM */
+/* Workspace indicator -- far left */
 .left {
-	-webkit-font-smoothing: antialiased;
-	color: var(--fgleft);
+	font: var(--pecan-font);
+	font-style: var(--pecan-font-style);
+	color: var(--pecan-fg-left);
 	display: block;
 	position: relative;
-	background-color: var(--bgleft);
-	opacity: var(--opacitysides);
-	font: var(--fontsize) var(--font);
-	left: var(--paddingleft);
-	padding: 0px var(--textpadding);
-	margin: calc(var(--paddingv) + var(--border)) var(--border);
-	line-height: calc(var(--height) - calc(var(--border) * 2);
+	background-color: var(--pecan-bg-left);
+	opacity: var(--pecan-opacity-sides);
+	left: var(--pecan-padding-left);
+	padding: 0px var(--pecan-text-padding);
+	margin: calc(var(--pecan-padding-v) + var(--pecan-border)) var(--pecan-border);
+	line-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2);
+	border-top-left-radius: var(--pecan-border-radius);
+	border-top-right-radius: var(--pecan-border-radius-inner);
+	border-bottom-right-radius: var(--pecan-border-radius-inner);
+	border-bottom-left-radius: var(--pecan-border-radius);
 }
 
 /* Network bandwidth -- 2nd to left -- requires ifstat */
 .left2 {
-	background-color: var(--bgleft2);
-	opacity: var(--opacitysides);
-	color: var(--fgleft2);
-	-webkit-font-smoothing: antialiased;
+	font: var(--pecan-font);
+	font-style: var(--pecan-font-style);
+	background-color: var(--pecan-bg-left2);
+	opacity: var(--pecan-opacity-sides);
+	color: var(--pecan-fg-left2);
 	position: relative;
 	display: block;
-	font: var(--fontsize) var(--font);
-	left: calc(var(--paddingleft) + calc(var(--textpadding) * 2) + 1ch + var(--border));
-	padding: 0px var(--textpadding);
-	margin: var(--border);
-	top: var(--paddingv);
-	line-height: calc(var(--height) - calc(var(--border) * 2);
+	left: calc(var(--pecan-padding-left) + calc(var(--pecan-text-padding) * 2) + 1ch + var(--pecan-border));
+	padding: 0px var(--pecan-text-padding);
+	margin: var(--pecan-border);
+	top: var(--pecan-padding-v);
+	line-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2);
+	border-top-left-radius: var(--pecan-border-radius-inner);
+	border-top-right-radius: var(--pecan-border-radius-inner);
+	border-bottom-right-radius: var(--pecan-border-radius-inner);
+	border-bottom-left-radius: var(--pecan-border-radius-inner);
 }
 
-/* Date -- third to left -- set --opacitycenter to 0 to hide */
+/* Date -- third to left -- set --pecan-opacitycenter to 0 to hide */
 .center {
-	color: var(--fgcenter);
-	background-color: var(--bgcenter);
-	opacity: var(--opacitycenter);
-	-webkit-font-smoothing: antialiased;
+	font: var(--pecan-font);
+	font-style: var(--pecan-font-style);
+	color: var(--pecan-fg-center);
+	background-color: var(--pecan-bg-center);
+	opacity: var(--pecan-opacity-center);
 	position: absolute;
 	display: inline-block;
-	font: var(--fontsize) var(--font);
-	padding: 0px var(--textpadding);
+	padding: 0px var(--pecan-text-padding);
 	width: auto;
 	left: 50%;
 	transform: translate(-50%);
-	margin: var(--border);
-	line-height:  calc(var(--height) - calc(var(--border) * 2);
+	margin: var(--pecan-border);
+	line-height:  calc(var(--pecan-height) - calc(var(--pecan-border) * 2);
 	text-align: center;
+	border-top-left-radius: var(--pecan-border-radius-inner);
+	border-top-right-radius: var(--pecan-border-radius-inner);
+	border-bottom-right-radius: var(--pecan-border-radius-inner);
+	border-bottom-left-radius: var(--pecan-border-radius-inner);
 }
 
 /* This is a container to align the center widget */
@@ -128,45 +149,52 @@
 	background-color: none;
 	display: block;
 	position: absolute;
-  	height: var(--height);
+  	height: var(--pecan-height);
 	left: 0px;
 	right: 0px;
-	margin: var(--paddingv) var(--paddingright) var(--paddingv) var(--paddingleft);
+	margin-top: var(--pecan-padding-v);
+	margin-right: var(--pecan-padding-right);
+	margin-bottom: var(--pecan-padding-v);
+	margin-left: var(--pecan-padding-left);
 }
 
 /* Battery percentage -- 4th to left */
 .right2 {
-	-webkit-font-smoothing: antialiased;
-	color: var(--fgright2);
+	font: var(--pecan-font);
+	font-style: var(--pecan-font-style);
+	color: var(--pecan-fg-right2);
  	display: block;
-	position: relative;
-	background-color: var(--bgright2);
-	opacity: var(--opacitysides);
-	font: var(--fontsize) var(--font);
-	padding: 0px var(--textpadding);
-	margin: var(--border);
-	top: var(--paddingv);
-	float: right;
-	right: calc(var(--paddingright) + calc(var(--textpadding) * 2) + 9ch + 2px + calc(var(--border) * 2));
-	margin: var(--border);
-	line-height:  calc(var(--height) - calc(var(--border) * 2));
+	position: absolute;
+	background-color: var(--pecan-bg-right2);
+	opacity: var(--pecan-opacity-sides);
+	padding: 0px var(--pecan-text-padding);
+	top: var(--pecan-padding-v);
+	right: calc(var(--pecan-padding-right) + calc(var(--pecan-text-padding) * 2) + 9ch + 3px + var(--pecan-border));
+	margin: var(--pecan-border);
+	line-height:  calc(var(--pecan-height) - calc(var(--pecan-border) * 2));
+	border-top-left-radius: var(--pecan-border-radius-inner);
+	border-top-right-radius: var(--pecan-border-radius-inner);
+	border-bottom-right-radius: var(--pecan-border-radius-inner);
+	border-bottom-left-radius: var(--pecan-border-radius-inner);
 }
 
 /* Clock -- 5th to left */
 .right {
-	-webkit-font-smoothing: antialiased;
-	color: var(--fgright);
+	font: var(--pecan-font);
+	font-style: var(--pecan-font-style);
+	color: var(--pecan-fg-right);
  	display: block;
-	position: relative;
-	background-color: var(--bgright);
-	opacity: var(--opacitysides);
-	font: var(--fontsize) var(--font);
-	padding: 0px var(--textpadding);
-	margin: var(--border);
-	top: var(--paddingv);
+	position: absolute;
+	background-color: var(--pecan-bg-right);
+	opacity: var(--pecan-opacity-sides);
+	padding: 0px var(--pecan-text-padding);
+	margin: var(--pecan-border);
+	top: var(--pecan-padding-v);
 	float: right;
-	right: var(--paddingright);
-	margin-left: auto;
-	margin-right: var(--border);
-	line-height:  calc(var(--height) - calc(var(--border) * 2);
+	right: var(--pecan-padding-right);
+	line-height:  calc(var(--pecan-height) - calc(var(--pecan-border) * 2);
+	border-top-left-radius: var(--pecan-border-radius-inner);
+	border-top-right-radius: var(--pecan-border-radius);
+	border-bottom-right-radius: var(--pecan-border-radius);
+	border-bottom-left-radius: var(--pecan-border-radius-inner);
 }
