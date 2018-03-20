@@ -4,44 +4,44 @@
   /* Choose background colors, ordered from left to right */
   /* Set --pecan-bg-center to "none" to have date's background same as bar */
   --pecan-bg: #141414;
-  --pecan-bg-left: #DA5A69;
-  --pecan-bg-left2: #2d2826;
+  --pecan-bg-left: #E0A16B;
+  --pecan-bg-left2: #9CA187;
   --pecan-bg-center: #141414;
-  --pecan-bg-right2: #2d2826;
-  --pecan-bg-right: #728797;
+  --pecan-bg-right2: #C4C09D;
+  --pecan-bg-right: #DFC79B;
   /* Choose foreground colors */
   --pecan-fg-left: #141414;
-  --pecan-fg-left2: #DA5A69;
-  --pecan-fg-center: #e4c9c2;
-  --pecan-fg-right2: #728797;
+  --pecan-fg-left2: #141414;
+  --pecan-fg-center: #dbdbcc;
+  --pecan-fg-right2: #141414;
   --pecan-fg-right: #141414;
   /* Opacity.  Change --pecan-opacity-center to 0 in order to hide date */
   /* --pecan-opacity affects --pecan-border, so set it to 0 if you would like */
   /* for every widget to appear independent. */
-  --pecan-opacity: 1;
-  --pecan-opacity-sides: 1;
-  --pecan-opacity-center: 1;
+  --pecan-opacity: 0;
+  --pecan-opacity-sides: 0.9;
+  --pecan-opacity-center: 0.9;
   /* Shadow */
   --pecan-shadow: 0px 4px 10px 4px rgba(0, 0, 0, 0.1);
   /* Entire bar's outer padding (use --pecan-border for space between widgets) */
-  --pecan-padding-left: 400px;
-  --pecan-padding-right: 400px;
-  --pecan-padding-v: 20px;
+  --pecan-padding-left: 0px;
+  --pecan-padding-right: 0px;
+  --pecan-padding-v: 0px;
   /* Inner-horizontal padding.  --pecan-height determines inner-vertical padding */
   --pecan-text-padding: 3ch;
   /* Bar's total height including --pecan-border and excluding padding */
-  --pecan-height: 35px;
+  --pecan-height: 55px;
   /* Mono font recommended (alignment depends on character width) */
   --pecan-font: 12px SF Mono;
   --pecan-font-style: none;
   /* Border size.  Also functions as space between widgets, */
   /* so set --pecan-opacity to 0 if you want widgets to appear independent */
-  --pecan-border: 0px;
+  --pecan-border: 10px;
   /* Rounded corner radius */
   /* Inner radius is best suited for when widgets appear independent */
   /* by setting --pecan-opacity to 0 */
   --pecan-border-radius: 5px;
-  --pecan-border-radius-inner: 0px;
+  --pecan-border-radius-inner: 5px;
 }
 
 /* Get monitor width */

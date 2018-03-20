@@ -10,38 +10,38 @@
 	/* Set --pecan-bg-center to "none" to have date's background same as bar */
 	--pecan-bg: $color0;
 	--pecan-bg-left: $color1;
-	--pecan-bg-left2: $color8;
+	--pecan-bg-left2: $color2;
 	--pecan-bg-center: $color0;
-	--pecan-bg-right2: $color8;
+	--pecan-bg-right2: $color5;
 	--pecan-bg-right: $color6;
 
 	/* Choose foreground colors */
 	--pecan-fg-left: $color0;
-	--pecan-fg-left2: $color1;
+	--pecan-fg-left2: $color0;
 	--pecan-fg-center: $color7;
-	--pecan-fg-right2: $color6;
+	--pecan-fg-right2: $color0;
 	--pecan-fg-right: $color0;
 
 	/* Opacity.  Change --pecan-opacity-center to 0 in order to hide date */
 	/* --pecan-opacity affects --pecan-border, so set it to 0 if you would like */
 	/* for every widget to appear independent. */
-	--pecan-opacity: 1;
-	--pecan-opacity-sides: 1;
-	--pecan-opacity-center: 1;
+	--pecan-opacity: 0;
+	--pecan-opacity-sides: 0.9;
+	--pecan-opacity-center: 0.9;
 
 	/* Shadow */
 	--pecan-shadow: 0px 4px 10px 4px rgba(0,0,0,0.10);
 
 	/* Entire bar's outer padding (use --pecan-border for space between widgets) */
-	--pecan-padding-left: 400px;
-	--pecan-padding-right: 400px;
-	--pecan-padding-v: 20px;
+	--pecan-padding-left: 0px;
+	--pecan-padding-right: 0px;
+	--pecan-padding-v: 0px;
 
 	/* Inner-horizontal padding.  --pecan-height determines inner-vertical padding */
 	--pecan-text-padding: 3ch;
 
 	/* Bar's total height including --pecan-border and excluding padding */
-	--pecan-height: 35px;
+	--pecan-height: 55px;
 
 	/* Mono font recommended (alignment depends on character width) */
 	--pecan-font: 12px SF Mono;
@@ -49,13 +49,13 @@
 
 	/* Border size.  Also functions as space between widgets, */
 	/* so set --pecan-opacity to 0 if you want widgets to appear independent */
-	--pecan-border: 0px;
+	--pecan-border: 10px;
 
 	/* Rounded corner radius */
 	/* Inner radius is best suited for when widgets appear independent */
 	/* by setting --pecan-opacity to 0 */
 	--pecan-border-radius: 5px;
-	--pecan-border-radius-inner: 0px;
+	--pecan-border-radius-inner: 5px;
 
 }
 
