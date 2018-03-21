@@ -22,8 +22,8 @@
   --pecan-opacity-inner: 1;
   --pecan-opacity-center: 1;
   /* Shadow. */
-  --pecan-shadow: 0px 4px 10px 4px rgba(0, 0, 0, 0.2);
-  --pecan-shadow-inner: 0px 1px 1px 1px rgba(0, 0, 0, 0.03);
+  --pecan-shadow: 0px 4px 10px 4px rgba(0,0,0,0.20);
+  --pecan-shadow-inner: 0px 1px 1px 1px rgba(0,0,0,0.03);
   /* Bar's total height including --pecan-border and excluding padding */
   --pecan-height: 37px;
   /* Entire bar's outer padding (use --pecan-border for space between widgets) */
