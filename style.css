@@ -4,25 +4,26 @@
   /* Choose background colors, ordered from left to right */
   /* Set --pecan-bg-center to "none" to have date's background same as bar */
   --pecan-bg: #141414;
-  --pecan-bg-left: #D1ABB8;
-  --pecan-bg-left2: #DBC3BC;
+  --pecan-bg-left: #46423D;
+  --pecan-bg-left2: #3B3E41;
   --pecan-bg-center: #141414;
-  --pecan-bg-right2: #D7CCD2;
-  --pecan-bg-right: #E6D2D3;
+  --pecan-bg-right2: #645E5A;
+  --pecan-bg-right: #706C6A;
   /* Choose foreground colors */
   --pecan-fg-left: #141414;
   --pecan-fg-left2: #141414;
-  --pecan-fg-center: #eae7e6;
+  --pecan-fg-center: #b8b5b4;
   --pecan-fg-right2: #141414;
   --pecan-fg-right: #141414;
   /* Opacity.  Change --pecan-opacity-center to 0 in order to hide date */
   /* --pecan-opacity affects --pecan-border, so set it to 0 if you would like */
   /* for every widget to appear independent. */
   --pecan-opacity: 0;
-  --pecan-opacity-sides: 0.9;
-  --pecan-opacity-center: 0.9;
-  /* Shadow */
-  --pecan-shadow: 0px 4px 10px 4px rgba(0, 0, 0, 0.1);
+  --pecan-opacity-inner: 1;
+  --pecan-opacity-center: 1;
+  /* Shadow. */
+  --pecan-shadow: 0px 4px 10px 4px rgba(0, 0, 0, 0.13);
+  --pecan-shadow-inner: 0px 4px 10px 4px rgba(0, 0, 0, 0.03);
   /* Entire bar's outer padding (use --pecan-border for space between widgets) */
   --pecan-padding-left: 0px;
   --pecan-padding-right: 0px;
@@ -30,18 +31,23 @@
   /* Inner-horizontal padding.  --pecan-height determines inner-vertical padding */
   --pecan-text-padding: 3ch;
   /* Bar's total height including --pecan-border and excluding padding */
-  --pecan-height: 49px;
+  --pecan-height: 37px;
   /* Mono font recommended (alignment depends on character width) */
-  --pecan-font: 12px SF Mono;
+  --pecan-font: SF Mono, Monaco;
+  --pecan-font-size: 11px;
   --pecan-font-style: none;
   /* Border size.  Also functions as space between widgets, */
   /* so set --pecan-opacity to 0 if you want widgets to appear independent */
-  --pecan-border: 10px;
+  --pecan-border: 7px;
   /* Rounded corner radius */
   /* Inner radius is best suited for when widgets appear independent */
   /* by setting --pecan-opacity to 0 */
-  --pecan-border-radius: 5px;
-  --pecan-border-radius-inner: 5px;
+  --pecan-border-radius: 3px;
+  --pecan-border-radius-inner: 3px;
+  /* This is for personal use.  I use it to align with Pecan */
+  --pecan-xanthia-horizontal: calc(var(--pecan-padding-right) + 3px + calc(var(--pecan-text-padding) * 4) + 14ch + calc(3 * var(--pecan-border)));
+  --pecan-xanthia-vertical: calc(var(--pecan-border) + var(--pecan-padding-v));
+  --pecan-xanthia-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2));
 }
 
 /* Get monitor width */
@@ -70,13 +76,13 @@
 
 /* Workspace indicator -- far left */
 .left {
-  font: var(--pecan-font);
+  font: var(--pecan-font-size) var(--pecan-font);
   font-style: var(--pecan-font-style);
   color: var(--pecan-fg-left);
   display: block;
   position: relative;
   background-color: var(--pecan-bg-left);
-  opacity: var(--pecan-opacity-sides);
+  opacity: var(--pecan-opacity-inner);
   left: var(--pecan-padding-left);
   padding: 0px var(--pecan-text-padding);
   margin: calc(var(--pecan-padding-v) + var(--pecan-border)) var(--pecan-border);
@@ -85,14 +91,15 @@
   border-top-right-radius: var(--pecan-border-radius-inner);
   border-bottom-right-radius: var(--pecan-border-radius-inner);
   border-bottom-left-radius: var(--pecan-border-radius);
+  box-shadow: var(--pecan-shadow-inner);
 }
 
 /* Network bandwidth -- 2nd to left -- requires ifstat */
 .left2 {
-  font: var(--pecan-font);
+  font: var(--pecan-font-size) var(--pecan-font);
   font-style: var(--pecan-font-style);
   background-color: var(--pecan-bg-left2);
-  opacity: var(--pecan-opacity-sides);
+  opacity: var(--pecan-opacity-inner);
   color: var(--pecan-fg-left2);
   position: relative;
   display: block;
@@ -105,11 +112,12 @@
   border-top-right-radius: var(--pecan-border-radius-inner);
   border-bottom-right-radius: var(--pecan-border-radius-inner);
   border-bottom-left-radius: var(--pecan-border-radius-inner);
+  box-shadow: var(--pecan-shadow-inner);
 }
 
 /* Date -- third to left -- set --pecan-opacitycenter to 0 to hide */
 .center {
-  font: var(--pecan-font);
+  font: var(--pecan-font-size) var(--pecan-font);
   font-style: var(--pecan-font-style);
   color: var(--pecan-fg-center);
   background-color: var(--pecan-bg-center);
@@ -127,6 +135,7 @@
   border-top-right-radius: var(--pecan-border-radius-inner);
   border-bottom-right-radius: var(--pecan-border-radius-inner);
   border-bottom-left-radius: var(--pecan-border-radius-inner);
+  box-shadow: var(--pecan-shadow-inner);
 }
 
 /* This is a container to align the center widget */
@@ -145,13 +154,13 @@
 
 /* Battery percentage -- 4th to left */
 .right2 {
-  font: var(--pecan-font);
+  font: var(--pecan-font-size) var(--pecan-font);
   font-style: var(--pecan-font-style);
   color: var(--pecan-fg-right2);
   display: block;
   position: absolute;
   background-color: var(--pecan-bg-right2);
-  opacity: var(--pecan-opacity-sides);
+  opacity: var(--pecan-opacity-inner);
   padding: 0px var(--pecan-text-padding);
   top: var(--pecan-padding-v);
   right: calc(var(--pecan-padding-right) + calc(var(--pecan-text-padding) * 2) + 9ch + 3px + var(--pecan-border));
@@ -161,17 +170,18 @@
   border-top-right-radius: var(--pecan-border-radius-inner);
   border-bottom-right-radius: var(--pecan-border-radius-inner);
   border-bottom-left-radius: var(--pecan-border-radius-inner);
+  box-shadow: var(--pecan-shadow-inner);
 }
 
 /* Clock -- 5th to left */
 .right {
-  font: var(--pecan-font);
+  font: var(--pecan-font-size) var(--pecan-font);
   font-style: var(--pecan-font-style);
   color: var(--pecan-fg-right);
   display: block;
   position: absolute;
   background-color: var(--pecan-bg-right);
-  opacity: var(--pecan-opacity-sides);
+  opacity: var(--pecan-opacity-inner);
   padding: 0px var(--pecan-text-padding);
   margin: var(--pecan-border);
   top: var(--pecan-padding-v);
@@ -182,4 +192,5 @@
   border-top-right-radius: var(--pecan-border-radius);
   border-bottom-right-radius: var(--pecan-border-radius);
   border-bottom-left-radius: var(--pecan-border-radius-inner);
+  box-shadow: var(--pecan-shadow-inner);
 }

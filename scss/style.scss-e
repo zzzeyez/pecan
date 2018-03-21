@@ -26,44 +26,37 @@
 	/* --pecan-opacity affects --pecan-border, so set it to 0 if you would like */
 	/* for every widget to appear independent. */
 	--pecan-opacity: 0;
-	--pecan-opacity-inner: 1;
-	--pecan-opacity-center: 1;
+	--pecan-opacity-sides: 1;
+	--pecan-opacity-center: 0;
 
-	/* Shadow. */
-	--pecan-shadow: 0px 4px 10px 4px rgba(0,0,0,0.13);
-	--pecan-shadow-inner: 0px 4px 10px 4px rgba(0,0,0,0.03);
+	/* Shadow */
+	--pecan-shadow: 0px 4px 10px 4px rgba(0,0,0,0.10);
 
 	/* Entire bar's outer padding (use --pecan-border for space between widgets) */
 	--pecan-padding-left: 0px;
 	--pecan-padding-right: 0px;
 	--pecan-padding-v: 0px;
 
-	/* Inner-horizontal padding.  --pecan-height determines inner-vertical padding */
+	/* Inner-horizontal padding.  --pecan-line-height determines inner-vertical padding */
 	--pecan-text-padding: 3ch;
 
 	/* Bar's total height including --pecan-border and excluding padding */
-	--pecan-height: 37px;
+	--pecan-line-height: 49px;
 
 	/* Mono font recommended (alignment depends on character width) */
-	--pecan-font: SF Mono, Monaco;
+	--pecan-font: Scientifica;
 	--pecan-font-size: 11px;
 	--pecan-font-style: none;
 
 	/* Border size.  Also functions as space between widgets, */
 	/* so set --pecan-opacity to 0 if you want widgets to appear independent */
-	--pecan-border: 7px;
+	--pecan-border: 10px;
 
 	/* Rounded corner radius */
 	/* Inner radius is best suited for when widgets appear independent */
 	/* by setting --pecan-opacity to 0 */
-	--pecan-border-radius: 3px;
-	--pecan-border-radius-inner: 3px;
-
-	/* This is for personal use.  I use it to align with Pecan */
-	--pecan-xanthia-horizontal: calc(var(--pecan-padding-right) + 3px + calc(var(--pecan-text-padding) * 4) + 14ch + calc(3 * var(--pecan-border)));
-	--pecan-xanthia-vertical: calc(var(--pecan-border) + var(--pecan-padding-v));
-	--pecan-xanthia-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2);
-
+	--pecan-border-radius: 5px;
+	--pecan-border-radius-inner: 5px;
 
 }
 
@@ -78,7 +71,7 @@
 	background-color: var(--pecan-bg);
 	display: block;
 	position: absolute;
-  	height: var(--pecan-height);
+  	height: var(--pecan-line-height);
 	left: 0px;
 	right: 0px;
 	margin: var(--pecan-padding-v) var(--pecan-padding-right) 0 var(--pecan-padding-left);
@@ -99,16 +92,15 @@
 	display: block;
 	position: relative;
 	background-color: var(--pecan-bg-left);
-	opacity: var(--pecan-opacity-inner);
+	opacity: var(--pecan-opacity-sides);
 	left: var(--pecan-padding-left);
 	padding: 0px var(--pecan-text-padding);
 	margin: calc(var(--pecan-padding-v) + var(--pecan-border)) var(--pecan-border);
-	line-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2);
+	line-height: calc(var(--pecan-line-height) - calc(var(--pecan-border) * 2);
 	border-top-left-radius: var(--pecan-border-radius);
 	border-top-right-radius: var(--pecan-border-radius-inner);
 	border-bottom-right-radius: var(--pecan-border-radius-inner);
 	border-bottom-left-radius: var(--pecan-border-radius);
-	box-shadow: var(--pecan-shadow-inner);
 }
 
 /* Network bandwidth -- 2nd to left -- requires ifstat */
@@ -116,7 +108,7 @@
 	font: var(--pecan-font-size) var(--pecan-font);
 	font-style: var(--pecan-font-style);
 	background-color: var(--pecan-bg-left2);
-	opacity: var(--pecan-opacity-inner);
+	opacity: var(--pecan-opacity-sides);
 	color: var(--pecan-fg-left2);
 	position: relative;
 	display: block;
@@ -124,12 +116,11 @@
 	padding: 0px var(--pecan-text-padding);
 	margin: var(--pecan-border);
 	top: var(--pecan-padding-v);
-	line-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2);
+	line-height: calc(var(--pecan-line-height) - calc(var(--pecan-border) * 2);
 	border-top-left-radius: var(--pecan-border-radius-inner);
 	border-top-right-radius: var(--pecan-border-radius-inner);
 	border-bottom-right-radius: var(--pecan-border-radius-inner);
 	border-bottom-left-radius: var(--pecan-border-radius-inner);
-	box-shadow: var(--pecan-shadow-inner);
 }
 
 /* Date -- third to left -- set --pecan-opacitycenter to 0 to hide */
@@ -146,13 +137,12 @@
 	left: 50%;
 	transform: translate(-50%);
 	margin: var(--pecan-border);
-	line-height:  calc(var(--pecan-height) - calc(var(--pecan-border) * 2);
+	line-height:  calc(var(--pecan-line-height) - calc(var(--pecan-border) * 2);
 	text-align: center;
 	border-top-left-radius: var(--pecan-border-radius-inner);
 	border-top-right-radius: var(--pecan-border-radius-inner);
 	border-bottom-right-radius: var(--pecan-border-radius-inner);
 	border-bottom-left-radius: var(--pecan-border-radius-inner);
-	box-shadow: var(--pecan-shadow-inner);
 }
 
 /* This is a container to align the center widget */
@@ -160,7 +150,7 @@
 	background-color: none;
 	display: block;
 	position: absolute;
-  	height: var(--pecan-height);
+  	height: var(--pecan-line-height);
 	left: 0px;
 	right: 0px;
 	margin-top: var(--pecan-padding-v);
@@ -177,17 +167,16 @@
  	display: block;
 	position: absolute;
 	background-color: var(--pecan-bg-right2);
-	opacity: var(--pecan-opacity-inner);
+	opacity: var(--pecan-opacity-sides);
 	padding: 0px var(--pecan-text-padding);
 	top: var(--pecan-padding-v);
 	right: calc(var(--pecan-padding-right) + calc(var(--pecan-text-padding) * 2) + 9ch + 3px + var(--pecan-border));
 	margin: var(--pecan-border);
-	line-height:  calc(var(--pecan-height) - calc(var(--pecan-border) * 2));
+	line-height:  calc(var(--pecan-line-height) - calc(var(--pecan-border) * 2));
 	border-top-left-radius: var(--pecan-border-radius-inner);
 	border-top-right-radius: var(--pecan-border-radius-inner);
 	border-bottom-right-radius: var(--pecan-border-radius-inner);
 	border-bottom-left-radius: var(--pecan-border-radius-inner);
-	box-shadow: var(--pecan-shadow-inner);
 }
 
 /* Clock -- 5th to left */
@@ -198,16 +187,15 @@
  	display: block;
 	position: absolute;
 	background-color: var(--pecan-bg-right);
-	opacity: var(--pecan-opacity-inner);
+	opacity: var(--pecan-opacity-sides);
 	padding: 0px var(--pecan-text-padding);
 	margin: var(--pecan-border);
 	top: var(--pecan-padding-v);
 	float: right;
 	right: var(--pecan-padding-right);
-	line-height:  calc(var(--pecan-height) - calc(var(--pecan-border) * 2);
+	line-height:  calc(var(--pecan-line-height) - calc(var(--pecan-border) * 2);
 	border-top-left-radius: var(--pecan-border-radius-inner);
 	border-top-right-radius: var(--pecan-border-radius);
 	border-bottom-right-radius: var(--pecan-border-radius);
 	border-bottom-left-radius: var(--pecan-border-radius-inner);
-	box-shadow: var(--pecan-shadow-inner);
 }
