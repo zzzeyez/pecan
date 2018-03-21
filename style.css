@@ -4,15 +4,15 @@
   /* Choose background colors, ordered from left to right */
   /* Set --pecan-bg-center to "none" to have date's background same as bar */
   --pecan-bg: #141414;
-  --pecan-bg-left: #564344;
-  --pecan-bg-left2: #AA4043;
+  --pecan-bg-left: #DA5A69;
+  --pecan-bg-left2: #656687;
   --pecan-bg-center: #141414;
-  --pecan-bg-right2: #928F70;
-  --pecan-bg-right: #DD994E;
+  --pecan-bg-right2: #DD7484;
+  --pecan-bg-right: #728797;
   /* Choose foreground colors */
   --pecan-fg-left: #141414;
   --pecan-fg-left2: #141414;
-  --pecan-fg-center: #c9c9c5;
+  --pecan-fg-center: #e4c9c2;
   --pecan-fg-right2: #141414;
   --pecan-fg-right: #141414;
   /* Opacity.  Change --pecan-opacity-center to 0 in order to hide date */
@@ -51,7 +51,7 @@
   --pecan-font-style: none;
   /* Xanthia */
   /* If Xanthia is not installed then these values will be ignored */
-  --pecan-xanthia-bg: #836F7C;
+  --pecan-xanthia-bg: #967387;
   --pecan-xanthia-fg: #141414;
   --pecan-xanthia-horizontal: calc(var(--pecan-padding-right) + calc(var(--pecan-text-padding) * 4) + 14ch + calc(3 * var(--pecan-border)));
   --pecan-xanthia-vertical: calc(var(--pecan-border) + var(--pecan-padding-v));
