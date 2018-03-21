@@ -4,15 +4,15 @@
   /* Choose background colors, ordered from left to right */
   /* Set --pecan-bg-center to "none" to have date's background same as bar */
   --pecan-bg: #141414;
-  --pecan-bg-left: #46423D;
-  --pecan-bg-left2: #3B3E41;
+  --pecan-bg-left: #C9B6B1;
+  --pecan-bg-left2: #D8C4BA;
   --pecan-bg-center: #141414;
-  --pecan-bg-right2: #645E5A;
-  --pecan-bg-right: #706C6A;
+  --pecan-bg-right2: #D4D3D0;
+  --pecan-bg-right: #E7D6D0;
   /* Choose foreground colors */
   --pecan-fg-left: #141414;
   --pecan-fg-left2: #141414;
-  --pecan-fg-center: #b8b5b4;
+  --pecan-fg-center: #e8e7e6;
   --pecan-fg-right2: #141414;
   --pecan-fg-right: #141414;
   /* Opacity.  Change --pecan-opacity-center to 0 in order to hide date */
@@ -44,7 +44,10 @@
   /* by setting --pecan-opacity to 0 */
   --pecan-border-radius: 3px;
   --pecan-border-radius-inner: 3px;
-  /* This is for personal use.  I use it to align with Pecan */
+  /* Xanthia */
+  /* If Xanthia is not installed then these values will be ignored */
+  --pecan-xanthia-bg: #B4C8D0;
+  --pecan-xanthia-fg: #141414;
   --pecan-xanthia-horizontal: calc(var(--pecan-padding-right) + 3px + calc(var(--pecan-text-padding) * 4) + 14ch + calc(3 * var(--pecan-border)));
   --pecan-xanthia-vertical: calc(var(--pecan-border) + var(--pecan-padding-v));
   --pecan-xanthia-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2));

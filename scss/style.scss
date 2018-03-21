@@ -59,7 +59,10 @@
 	--pecan-border-radius: 3px;
 	--pecan-border-radius-inner: 3px;
 
-	/* This is for personal use.  I use it to align with Pecan */
+	/* Xanthia */
+	/* If Xanthia is not installed then these values will be ignored */
+	--pecan-xanthia-bg: $color4;
+	--pecan-xanthia-fg: $color0;
 	--pecan-xanthia-horizontal: calc(var(--pecan-padding-right) + 3px + calc(var(--pecan-text-padding) * 4) + 14ch + calc(3 * var(--pecan-border)));
 	--pecan-xanthia-vertical: calc(var(--pecan-border) + var(--pecan-padding-v));
 	--pecan-xanthia-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2);
