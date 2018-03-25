@@ -1,0 +1,73 @@
+#!/usr/bin/env bash
+#
+# Script to import and export Pecan styles
+# Author: Daniel Neemann
+
+uber="/Users/zzzeyez/scripts/uber/"
+name="$2"
+directory="${PWD##*/}"
+themes="./themes/$name"
+
+save(){
+	if [[ -z "$name" ]] ; then
+		echo "requires theme name.  try pecan -s name"
+		exit 1
+	else
+	status="saved"
+	mkdir "$themes"
+	cp ./style.css "$themes/style.css" &&
+	cp ./scss/style.scss "$themes/style.scss" &&
+	screencapture "$themes/$name.jpg" &&
+	convert "$themes/$name.jpg" -geometry 600 -quality 90 "$themes/$name.jpg" &&
+	touch "$themes/README.md" &&
+	echo "![$name]($name.jpg)" > "$themes/README.md" &&
+	notify
+	fi
+}
+
+load(){
+	if [[ -z "$name" ]] ; then
+		echo "requires theme name.  try pecan -l theme"
+		exit 1
+	else
+	status="loaded" &&
+	cp "$themes/style.css" ./style.css &&
+	cp "$themes/style.scss" ./scss/style.scss &&
+	refresh &&
+	notify
+	fi
+}
+
+list(){
+	echo 'available themes: '
+	ls "$themes"
+}
+
+notify(){
+	if command -v notify-send >/dev/null 2>&1; then
+		notify-send "✔ Pecan style '$name' $status"
+	else
+		echo "Pecan style '$name' $status"
+	fi
+}
+
+refresh(){
+osascript <<EOD
+  tell application "Übersicht"
+  	refresh widget id "Pecan-background-coffee"
+  end tell
+EOD
+}
+
+help(){
+	echo '--load theme-name, --save theme-name, --list'
+}
+
+cd "$uber/Pecan" &&
+case $1 in
+	-l|--load) load ;;
+	-s|--save) save ;;
+	-h|--help) help ;;
+	-ls|--list) list ;;
+	*) help && list ;;
+esac
