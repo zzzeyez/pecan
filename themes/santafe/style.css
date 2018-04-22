@@ -3,18 +3,18 @@
 :root {
   /* Choose background colors, ordered from left to right */
   /* Set --pecan-bg-center to "none" to have date's background same as bar */
-  --pecan-bg: #545256;
-  --pecan-bg-left: #CCC5BB;
-  --pecan-bg-left2: none;
-  --pecan-bg-center: none;
-  --pecan-bg-right2: #545256;
-  --pecan-bg-right: none;
+  --pecan-bg: #28272a;
+  --pecan-bg-left: #1D6E8F;
+  --pecan-bg-left2: #28272a;
+  --pecan-bg-center: #28272a;
+  --pecan-bg-right2: #28272a;
+  --pecan-bg-right: #FD95A9;
   /* Choose foreground colors */
-  --pecan-fg-left: #fcfcfb;
-  --pecan-fg-left2: #908d8c;
-  --pecan-fg-center: #fcfcfb;
-  --pecan-fg-right2: #E3DCD7;
-  --pecan-fg-right: #E8E2DC;
+  --pecan-fg-left: #28272a;
+  --pecan-fg-left2: #1D6E8F;
+  --pecan-fg-center: #e1d6c9;
+  --pecan-fg-right2: #FD95A9;
+  --pecan-fg-right: #28272a;
   /* Opacity.  Change --pecan-opacity-center to 0 in order to hide date */
   /* --pecan-opacity affects --pecan-border, so set it to 0 if you would like */
   /* for every widget to appear independent. */
@@ -22,10 +22,10 @@
   --pecan-opacity-inner: 1;
   --pecan-opacity-center: 1;
   /* Shadow. */
-  --pecan-shadow: 0px 4px 10px 4px rgba(0,0,0,0.15);
-  --pecan-shadow-inner: 0px 1px 1px 1px rgba(0,0,0,0.0);
+  --pecan-shadow: 0px 4px 10px 4px rgba(0,0,0,0.20);
+  --pecan-shadow-inner: 0px 1px 1px 1px rgba(0,0,0,0.00);
   /* Bar's total height including --pecan-border and excluding padding */
-  --pecan-height: 36px;
+  --pecan-height: 21px;
   /* Entire bar's outer padding (use --pecan-border for space between widgets) */
   --pecan-padding-left: 0px;
   --pecan-padding-right: 0px;
@@ -37,7 +37,7 @@
   /* Inner radius is best suited for when widgets appear independent */
   /* by setting --pecan-opacity to 0 */
   --pecan-border-radius: 0px;
-  --pecan-border-radius-inner: 5px;
+  --pecan-border-radius-inner: 3px;
   /* Inner-horizontal padding.  --pecan-height determines inner-vertical padding */
   --pecan-text-padding: 3ch;
   /* Alignment */
@@ -51,13 +51,13 @@
   --pecan-font-style: none;
   /* Xanthia */
   /* If Xanthia is not installed then these values will be ignored */
-  --pecan-xanthia-bg: #545256;
-  --pecan-xanthia-fg: #D8D4D0;
+  --pecan-xanthia-bg: #28272a;
+  --pecan-xanthia-fg: #A16F8F;
   /* This is padding from edge of screen */
   --pecan-xanthia-horizontal: calc(var(--pecan-padding-right) + calc(var(--pecan-text-padding) * 4) + 14ch + calc(3 * var(--pecan-border)));
   --pecan-xanthia-vertical: calc(var(--pecan-border) + var(--pecan-padding-v));
   /* These are maximum sizes */
-  --pecan-xanthia-width: auto;
+  --pecan-xanthia-width: 400px;
   --pecan-xanthia-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2));
   --pecan-xanthia-border-radius: var(--pecan-border-radius-inner);
   --pecan-xanthia-shadow: var(--pecan-shadow-inner);
@@ -84,12 +84,12 @@
   margin-bottom: var(--pecan-padding-v);
   margin-left: var(--pecan-padding-left);
   opacity: var(--pecan-opacity);
-  z-index: -1;
+  z-index: 2;
   box-shadow: var(--pecan-shadow);
   border-top-left-radius: calc(var(--pecan-border) + 1px + var(--pecan-border-radius));
   border-top-right-radius: calc(var(--pecan-border) + 1px + var(--pecan-border-radius));
-  border-bottom-right-radius: var(--pecan-border-radius-inner);
-  border-bottom-left-radius: var(--pecan-border-radius-inner);
+  border-bottom-right-radius: calc(var(--pecan-border) + 1px + var(--pecan-border-radius));
+  border-bottom-left-radius: calc(var(--pecan-border) + 1px + var(--pecan-border-radius));
 }
 
 /* Workspace indicator -- far left */
@@ -110,11 +110,12 @@
   margin-bottom: calc(var(--pecan-padding-v) + var(--pecan-border));
   margin-left: calc(var(--pecan-padding-left) + var(--pecan-border));
   line-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2));
-  border-top-left-radius: var(--pecan-border-radius-inner);
+  border-top-left-radius: var(--pecan-border-radius);
   border-top-right-radius: var(--pecan-border-radius-inner);
   border-bottom-right-radius: var(--pecan-border-radius-inner);
-  border-bottom-left-radius: var(--pecan-border-radius-inner);
+  border-bottom-left-radius: var(--pecan-border-radius);
   box-shadow: var(--pecan-shadow-inner);
+  z-index: 3;
 }
 
 /* Network bandwidth -- 2nd to left */
@@ -140,6 +141,7 @@
   border-bottom-right-radius: var(--pecan-border-radius-inner);
   border-bottom-left-radius: var(--pecan-border-radius-inner);
   box-shadow: var(--pecan-shadow-inner);
+  z-index: 3;
 }
 
 /* Date -- third to left -- set --pecan-opacity-center to 0 to hide */
@@ -165,6 +167,7 @@
   border-bottom-right-radius: var(--pecan-border-radius-inner);
   border-bottom-left-radius: var(--pecan-border-radius-inner);
   box-shadow: var(--pecan-shadow-inner);
+  z-index: 3;
 }
 
 /* This is a container to align the center widget */
@@ -206,6 +209,7 @@
   border-bottom-right-radius: var(--pecan-border-radius-inner);
   border-bottom-left-radius: var(--pecan-border-radius-inner);
   box-shadow: var(--pecan-shadow-inner);
+  z-index: 3;
 }
 
 /* Clock -- 5th to left */
@@ -232,4 +236,5 @@
   border-bottom-right-radius: var(--pecan-border-radius);
   border-bottom-left-radius: var(--pecan-border-radius-inner);
   box-shadow: var(--pecan-shadow-inner);
+  z-index: 3;
 }
