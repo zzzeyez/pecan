@@ -3,32 +3,32 @@
 :root {
   /* Choose background colors, ordered from left to right */
   /* Set --pecan-bg-center to "none" to have date's background same as bar */
-  --pecan-bg: #3d3d3d;
-  --pecan-bg-left: #b9baad;
-  --pecan-bg-left2: #3d3d3d;
+  --pecan-bg: #3c3c3c;
+  --pecan-bg-left: #38ad9f;
+  --pecan-bg-left2: #3c3c3c;
   --pecan-bg-center: none;
-  --pecan-bg-right2: #3d3d3d;
-  --pecan-bg-right: #b5b8b6;
+  --pecan-bg-right2: #27a2aa;
+  --pecan-bg-right: #30adac;
   /* Choose foreground colors */
-  --pecan-fg-left: #f5f5f5;
-  --pecan-fg-left2: #b9baad;
-  --pecan-fg-center: #f5f5f5;
-  --pecan-fg-right2: #b5b8b6;
-  --pecan-fg-right: #f5f5f5;
+  --pecan-fg-left: #f1f2f3;
+  --pecan-fg-left2: #38ad9f;
+  --pecan-fg-center: #f1f2f3;
+  --pecan-fg-right2: #f1f2f3;
+  --pecan-fg-right: #f1f2f3;
   /* Opacity.  Change --pecan-opacity-center to 0 in order to hide date */
   /* --pecan-opacity affects --pecan-border, so set it to 0 if you would like */
   /* for every widget to appear independent. */
   --pecan-opacity: 1;
   --pecan-opacity-inner: 1;
-  --pecan-opacity-center: 1;
+  --pecan-opacity-center: 0;
   /* Shadow. */
   --pecan-shadow: 0px 4px 10px 4px rgba(0,0,0,0.20);
   --pecan-shadow-inner: 0px 1px 1px 1px rgba(0,0,0,0.0);
   /* Bar's total height including --pecan-border and excluding padding */
-  --pecan-height: 38px;
+  --pecan-height: 44px;
   /* Entire bar's outer padding (use --pecan-border for space between widgets) */
-  --pecan-padding-left: 30%;
-  --pecan-padding-right: 30%;
+  --pecan-padding-left: 10%;
+  --pecan-padding-right: 60%;
   --pecan-padding-v: 60px;
   /* Border size.  Also functions as space between widgets, */
   /* so set --pecan-opacity to 0 if you want widgets to appear independent */
@@ -46,15 +46,15 @@
   --pecan-alignment-top: 0;
   --pecan-alignment-bottom: auto;
   /* Mono font recommended (alignment depends on character width) */
-  --pecan-font: Menlo, SF Mono, scientifica;
+  --pecan-font: scientifica, SF Mono, Menlo;
   --pecan-font-size: 11px;
   --pecan-font-style: none;
   /* Xanthia */
   /* If Xanthia is not installed then these values will be ignored */
-  --pecan-xanthia-bg: #f5f5f5;
-  --pecan-xanthia-fg: #3d3d3d;
+  --pecan-xanthia-bg: #3c3c3c;
+  --pecan-xanthia-fg: #f1f2f3;
   /* This is padding from edge of screen */
-  --pecan-xanthia-horizontal: var(--pecan-padding-v);
+  --pecan-xanthia-horizontal: var(--pecan-padding-left);
   --pecan-xanthia-vertical: calc(var(--pecan-border) + var(--pecan-padding-v));
   /* These are maximum sizes */
   --pecan-xanthia-width: 400px;

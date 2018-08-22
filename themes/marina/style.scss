@@ -12,14 +12,14 @@
 	--pecan-bg-left: #{$color6};
 	--pecan-bg-left2: #{$color7};
 	--pecan-bg-center: none;
-	--pecan-bg-right2: #{$color7};
+	--pecan-bg-right2: #{$color4};
 	--pecan-bg-right: #{$color5};
 
 	/* Choose foreground colors */
 	--pecan-fg-left: #{$color0};
 	--pecan-fg-left2: #{$color6};
 	--pecan-fg-center: #{$color0};
-	--pecan-fg-right2: #{$color5};
+	--pecan-fg-right2: #{$color0};
 	--pecan-fg-right: #{$color0};
 
 	/* Opacity.  Change --pecan-opacity-center to 0 in order to hide date */
@@ -27,18 +27,18 @@
 	/* for every widget to appear independent. */
 	--pecan-opacity: 1;
 	--pecan-opacity-inner: 1;
-	--pecan-opacity-center: 1;
+	--pecan-opacity-center: 0;
 
 	/* Shadow. */
 	--pecan-shadow: 0px 4px 10px 4px rgba(0,0,0,0.20);
 	--pecan-shadow-inner: 0px 1px 1px 1px rgba(0,0,0,0.0);
 
 	/* Bar's total height including --pecan-border and excluding padding */
-	--pecan-height: 38px;
+	--pecan-height: 44px;
 
 	/* Entire bar's outer padding (use --pecan-border for space between widgets) */
-	--pecan-padding-left: 30%;
-	--pecan-padding-right: 30%;
+	--pecan-padding-left: 10%;
+	--pecan-padding-right: 60%;
 	--pecan-padding-v: 60px;
 
 	/* Border size.  Also functions as space between widgets, */
@@ -61,16 +61,16 @@
 	--pecan-alignment-bottom: auto;
 	
 	/* Mono font recommended (alignment depends on character width) */
-	--pecan-font: Menlo, SF Mono, scientifica;
+	--pecan-font: scientifica, SF Mono, Menlo;
 	--pecan-font-size: 11px;
 	--pecan-font-style: none;
 
 	/* Xanthia */
 	/* If Xanthia is not installed then these values will be ignored */
-	--pecan-xanthia-bg: #{$color0};
-	--pecan-xanthia-fg: #{$color7};
+	--pecan-xanthia-bg: #{$color7};
+	--pecan-xanthia-fg: #{$color0};
 	/* This is padding from edge of screen */
-	--pecan-xanthia-horizontal: var(--pecan-padding-v);
+	--pecan-xanthia-horizontal: var(--pecan-padding-left);
 	--pecan-xanthia-vertical: calc(var(--pecan-border) + var(--pecan-padding-v));
 	/* These are maximum sizes */
 	--pecan-xanthia-width: 400px;
