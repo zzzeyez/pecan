@@ -15,7 +15,7 @@ Pecan is a bar for macOS.  It was built to be highly configurable and — by def
 Pecan requires [Übersicht](http://tracesof.net/uebersicht/).  Once Übersicht is installed, you can clone this repository to where your Übersicht bars are placed.
 
 ```
-git clone https://github.com/zzzeyez/Pecan.git $HOME/Library/Application\ Support/Übersicht/widgets/Pecan
+git clone https://github.com/zzzeyez/Pecan.git "$HOME/Library/Application Support/Übersicht/widgets/Pecan"
 ```
 
 If Übersicht is running, then the bar should appear.
@@ -29,13 +29,13 @@ Pecan includes a tool `pecan-style` to allow users to save and load themes.  The
 To use the tool `pecan-style`, first you must tell it where your Übersicht folder is located:
 
 ```
-sed -i -e "s~/Users/zzzeyez/scripts/uber~HOME/Library/Application\ Support/Übersicht/widgets~g" "$HOME/Library/Application\ Support/Übersicht/widgets/Pecan/pecan-style"
+sed -i -e "s~/Users/zzzeyez/scripts/uber~HOME/Library/Application\ Support/Übersicht/widgets~g" "$HOME/Library/Application Support/Übersicht/widgets/Pecan/pecan-style"
 ```
 
 And then install the tool:
 
 ```
-mv "$HOME/Library/Application\ Support/Übersicht/widgets/Pecan/pecan-style" "/usr/local/bin"
+mv "$HOME/Library/Application Support/Übersicht/widgets/Pecan/pecan-style" "/usr/local/bin"
 ```
 
 Then if you want to load the Fillmore theme,  you do it like so:
@@ -86,12 +86,12 @@ brew install sassc
 And then you must change the username at the top of `scss/style.scss` to that of your own:
 
 ```
-sed -i -e "s/zzzeyez/$USER/g" ~/Library/Application\ Support/Übersicht/widgets/Pecan/scss/style.scss
+sed -i -e "s/zzzeyez/$USER/g" "$HOME/Library/Application Support/Übersicht/widgets/Pecan/scss/style.scss"
 ```
   
 Now you can run the script to use Wal's palettes:
 
 ```
-bash ~/Library/Application\ Support/Übersicht/widgets/Pecan/wal-set
+bash "$HOME/Library/Application Support/Übersicht/widgets/Pecan/wal-set"
 ```
 
