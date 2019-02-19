@@ -1,12 +1,8 @@
 #!/usr/bin/env bash
 
-exists () {
-    type "$1" &> /dev/null ;
-}
-
-if exists /usr/local/bin/chunkc ; then
-     /usr/local/bin/chunkc tiling::query --desktop id
+ps cax | grep chunkwm > /dev/null
+if [ $? -eq 0 ]; then
+  /usr/local/bin/chunkc tiling::query --desktop id
 else
-   	echo "⏻"
+  echo ""
 fi
-
