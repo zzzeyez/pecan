@@ -69,7 +69,7 @@ brew install ifstat
 Current workspace ID can be shown on the left element if [ChunkWM](https://github.com/koekeishiya/chunkwm) is installed, otherwise a power symbol will be shown instead.  To install ChunkWM:
   
 ```
-brew tap crisidev/homebrew-chunkwm
+brew tap koekeishiya/formulae
 brew install chunkwm
 ````
 
