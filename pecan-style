@@ -52,11 +52,7 @@ notify(){
 }
 
 refresh(){
-osascript <<EOD
-  tell application "Übersicht"
-  	refresh widget id "Pecan-background-coffee"
-  end tell
-EOD
+osascript -e 'tell application "'$(ps ax | grep sicht | awk '{print $5}' | head -1 | cut -d/ -f3 | cut -d. -f1)'" to refresh'
 }
 
 help(){
