@@ -26,13 +26,7 @@ If Übersicht is running, then the bar should appear.
 
 Pecan includes a tool `pecan-style` to allow users to save and load themes.  There are, by default, a few included themes.
 
-To use the tool `pecan-style`, first you must tell it where your Übersicht folder is located:
-
-```
-sed -i -e "s~/Users/zzzeyez/scripts/uber~HOME/Library/Application\ Support/Übersicht/widgets~g" "$HOME/Library/Application Support/Übersicht/widgets/Pecan/pecan-style"
-```
-
-And then install the tool:
+To install `pecan-style`, first place it in your $PATH
 
 ```
 mv "$HOME/Library/Application Support/Übersicht/widgets/Pecan/pecan-style" "/usr/local/bin"

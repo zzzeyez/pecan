@@ -62,7 +62,7 @@
 	
 	/* Mono font recommended (alignment depends on character width) */
 	--pecan-font: SF Mono, Menlo;
-	--pecan-font-size: 12px;
+	--pecan-font-size: 10px;
 	--pecan-font-style: none;
 
 	/* Xanthia */
@@ -73,7 +73,7 @@
 	--pecan-xanthia-horizontal: calc(var(--pecan-padding-right) + calc(var(--pecan-text-padding) * 4) + 14ch + calc(3 * var(--pecan-border)));
 	--pecan-xanthia-vertical: calc(var(--pecan-border) + var(--pecan-padding-v));
 	/* These are maximum sizes */
-	--pecan-xanthia-width: auto;
+	--pecan-xanthia-width: 73ch;
 	--pecan-xanthia-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2));
 	--pecan-xanthia-border-radius: var(--pecan-border-radius-inner);
 	--pecan-xanthia-shadow: var(--pecan-shadow-inner);

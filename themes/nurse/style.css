@@ -3,18 +3,18 @@
 :root {
   /* Choose background colors, ordered from left to right */
   /* Set --pecan-bg-center to "none" to have date's background same as bar */
-  --pecan-bg: #211e1c;
-  --pecan-bg-left: #a79a93;
+  --pecan-bg: #241111;
+  --pecan-bg-left: #947d7d;
   --pecan-bg-left2: none;
   --pecan-bg-center: none;
   --pecan-bg-right2: none;
   --pecan-bg-right: none;
   /* Choose foreground colors */
-  --pecan-fg-left: #211e1c;
-  --pecan-fg-left2: #585654;
-  --pecan-fg-center: #c7c6c6;
-  --pecan-fg-right2: #9eb09e;
-  --pecan-fg-right: #98a2ab;
+  --pecan-fg-left: #241111;
+  --pecan-fg-left2: #5a4c4c;
+  --pecan-fg-center: #c8c3c3;
+  --pecan-fg-right2: #839599;
+  --pecan-fg-right: #846b6c;
   /* Opacity.  Change --pecan-opacity-center to 0 in order to hide date */
   /* --pecan-opacity affects --pecan-border, so set it to 0 if you would like */
   /* for every widget to appear independent. */
@@ -47,17 +47,17 @@
   --pecan-alignment-bottom: auto;
   /* Mono font recommended (alignment depends on character width) */
   --pecan-font: SF Mono, Menlo;
-  --pecan-font-size: 12px;
+  --pecan-font-size: 10px;
   --pecan-font-style: none;
   /* Xanthia */
   /* If Xanthia is not installed then these values will be ignored */
   --pecan-xanthia-bg: none;
-  --pecan-xanthia-fg: #ada29a;
+  --pecan-xanthia-fg: #90a2a4;
   /* This is padding from edge of screen */
   --pecan-xanthia-horizontal: calc(var(--pecan-padding-right) + calc(var(--pecan-text-padding) * 4) + 14ch + calc(3 * var(--pecan-border)));
   --pecan-xanthia-vertical: calc(var(--pecan-border) + var(--pecan-padding-v));
   /* These are maximum sizes */
-  --pecan-xanthia-width: auto;
+  --pecan-xanthia-width: 73ch;
   --pecan-xanthia-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2));
   --pecan-xanthia-border-radius: var(--pecan-border-radius-inner);
   --pecan-xanthia-shadow: var(--pecan-shadow-inner);
