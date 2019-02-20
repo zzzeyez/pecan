@@ -29,7 +29,7 @@ Pecan includes a tool `pecan-style` to allow users to save and load themes.  The
 To install `pecan-style`, first place it in your $PATH
 
 ```
-mv "$HOME/Library/Application Support/Übersicht/widgets/Pecan/pecan-style" "/usr/local/bin"
+ln -s "$HOME/Library/Application Support/Übersicht/widgets/Pecan/pecan-style" "/usr/local/bin"
 ```
 
 Then if you want to load the Fillmore theme,  you do it like so:
