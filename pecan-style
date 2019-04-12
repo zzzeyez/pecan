@@ -1,26 +1,35 @@
 #!/usr/bin/env bash
 #
-# Script to import and export Pecan styles
-# Author: Daniel Neemann
+# author: daniel neemann (@zzzeyez)
+#
+# requires Übersicht, 
 
 uber="$HOME/Library/Application Support/Übersicht/widgets/"
 name="$2"
-directory="${PWD##*/}"
-themes="./themes/$name"
+themes="$uber/Pecan/themes/$name"
+
+checkdir() {
+if [ ! -d "$uber/Pecan" ]; then
+	echo "directory $uber/Pecan not found"
+	echo "please edit line 6 to include location of Übersicht widgets"
+	echo "now exiting.."
+	exit
+fi
+}
 
 save(){
 	if [[ -z "$name" ]] ; then
 		echo "requires theme name.  try pecan -s name"
 		exit 1
 	else
-	status="saved"
 	mkdir "$themes"
-	cp ./style.css "$themes/style.css" &&
-	cp ./scss/style.scss "$themes/style.scss" &&
-	screencapture "$themes/$name.jpg" &&
-	convert "$themes/$name.jpg" -geometry 600 -quality 90 "$themes/$name.jpg" &&
-	touch "$themes/README.md" &&
-	echo "![$name]($name.jpg)" > "$themes/README.md" &&
+	cp "$uber/Pecan/style.css" "$themes/style.css" &&
+	cp "$uber/Pecan/scss/style.scss" "$themes/style.scss" &&
+	status="saved"
+	screencapture "$themes/$name.jpg"
+	convert "$themes/$name.jpg" -geometry 600 -quality 90 "$themes/$name.jpg"
+	touch "$themes/README.md"
+	echo "![$name]($name.jpg)" > "$themes/README.md"
 	notify
 	fi
 }
@@ -30,17 +39,19 @@ load(){
 		echo "requires theme name.  try pecan -l theme"
 		exit 1
 	else
-	status="loaded" &&
-	cp "$themes/style.css" ./style.css &&
-	cp "$themes/style.scss" ./scss/style.scss &&
-	refresh &&
+	cp "$themes/style.css" "$uber/Pecan/style.css" &&
+	cp "$themes/style.scss" "$uber/Pecan/scss/style.scss" &&
+	status="loaded"
+	refresh
 	notify
 	fi
 }
 
 list(){
-	echo 'available themes: '
+	echo "available themes:"
 	ls "$themes"
+	echo "screenshots of themes are located in:"
+	echo "$uber/Pecan/themes/"
 }
 
 notify(){
@@ -52,18 +63,24 @@ notify(){
 }
 
 refresh(){
-osascript -e 'tell application "'$(ps ax | grep sicht | awk '{print $5}' | head -1 | cut -d/ -f3 | cut -d. -f1)'" to refresh'
+	osascript -e 'tell application "'$(ps ax | grep sicht | awk '{print $5}' | head -1 | cut -d/ -f3 | cut -d. -f1)'" to refresh'
 }
 
 help(){
-	echo '--load theme-name, --save theme-name, --list'
+	echo "available flags:"
+	echo "list themes: -ls or --list"
+	echo "load theme: -l or --load (theme name)"
+	echo "save theme: -s or --save (theme name)"
+	echo "help: -h or --help"
+	echo "screenshots of themes are located in:"
+	echo "$uber/Pecan/themes/"
 }
 
-cd "$uber/Pecan" &&
+checkdir
 case $1 in
 	-l|--load) load ;;
 	-s|--save) save ;;
 	-h|--help) help ;;
 	-ls|--list) list ;;
-	*) help && list ;;
+	*) help ;;
 esac
