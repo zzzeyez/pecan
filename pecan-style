@@ -2,16 +2,26 @@
 #
 # author: daniel neemann (@zzzeyez)
 #
-# requires Übersicht, 
+# requires Übersicht
+# optional dependency: `imagemagick` (to save screenshots when saving theme)
 
+
+
+#########################################
+# change the variable below to point to #
+# wherever your Übersicht widgets are.  #
+#########################################
 uber="$HOME/Library/Application Support/Übersicht/widgets/"
+
+
+
 name="$2"
 themes="$uber/Pecan/themes/$name"
 
 checkdir() {
 if [ ! -d "$uber/Pecan" ]; then
 	echo "directory $uber/Pecan not found"
-	echo "please edit line 6 to include location of Übersicht widgets"
+	echo "please edit line 14 to include location of Übersicht widgets"
 	echo "now exiting.."
 	exit
 fi
@@ -27,10 +37,11 @@ save(){
 	cp "$uber/Pecan/scss/style.scss" "$themes/style.scss" &&
 	status="saved"
 	screencapture "$themes/$name.jpg"
-	convert "$themes/$name.jpg" -geometry 600 -quality 90 "$themes/$name.jpg"
+	if command -v convert >/dev/null 2>&1; then
+		convert "$themes/$name.jpg" -geometry 600 -quality 90 "$themes/$name.jpg"
+	fi
 	touch "$themes/README.md"
 	echo "![$name]($name.jpg)" > "$themes/README.md"
-	notify
 	fi
 }
 
@@ -42,8 +53,6 @@ load(){
 	cp "$themes/style.css" "$uber/Pecan/style.css" &&
 	cp "$themes/style.scss" "$uber/Pecan/scss/style.scss" &&
 	status="loaded"
-	refresh
-	notify
 	fi
 }
 
@@ -78,9 +87,22 @@ help(){
 
 checkdir
 case $1 in
-	-l|--load) load ;;
-	-s|--save) save ;;
-	-h|--help) help ;;
-	-ls|--list) list ;;
-	*) help ;;
+	-l|--load) 
+		load
+		refresh
+		notify
+	;;
+	-s|--save)
+		save
+		notify
+	;;
+	-h|--help)
+		help
+	;;
+	-ls|--list)
+		list
+	;;
+	*)
+		help
+	;;
 esac
