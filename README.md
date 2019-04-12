@@ -40,6 +40,8 @@ pecan-style --load fillmore
 
 You can also save and list themes by — respectively — using `--save` and `--list`. 
 
+(These instructions assume your Übersicht widgets are stored in the default location.  If they are not, then you will need to manually edit line 14 to include the correct location and copy the script into your `$PATH` yourself.)
+
 #### Create themes
 
 Because Pecan is styled using CSS3 variables, the top lines of `style.css` can easily be edited to change properties like opacity, alignment, padding, colors and more.  If you are using this bar with Wal, then you should be editing `scss/style.scss` instead.
