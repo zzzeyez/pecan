@@ -19,13 +19,13 @@
 	--pecan-fg-left: #{$color0};
 	--pecan-fg-left2: #{$color8};
 	--pecan-fg-center: #{$color7};
-	--pecan-fg-right2: #{$color5};
-	--pecan-fg-right: #{$color6};
+	--pecan-fg-right2: #{$color8};
+	--pecan-fg-right: #{$color7};
 
 	/* Opacity.  Change --pecan-opacity-center to 0 in order to hide date */
 	/* --pecan-opacity affects --pecan-border, so set it to 0 if you would like */
 	/* for every widget to appear independent. */
-	--pecan-opacity: 0.85;
+	--pecan-opacity: 0.93;
 	--pecan-opacity-inner: 1;
 	--pecan-opacity-center: 1;
 
@@ -69,7 +69,7 @@
 	/* Xanthia */
 	/* If Xanthia is not installed then these values will be ignored */
 	--pecan-xanthia-bg: none;
-	--pecan-xanthia-fg: #{$color4};
+	--pecan-xanthia-fg: #{$color2};
 	/* This is padding from edge of screen */
 	--pecan-xanthia-horizontal: calc(var(--pecan-padding-right) + calc(var(--pecan-text-padding) * 4) + 14ch + calc(3 * var(--pecan-border)));
 	--pecan-xanthia-vertical: calc(var(--pecan-border) + var(--pecan-padding-v));

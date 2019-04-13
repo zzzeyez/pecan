@@ -11,7 +11,7 @@
 # change the variable below to point to #
 # wherever your Übersicht widgets are.  #
 #########################################
-uber="$HOME/Library/Application Support/Übersicht/widgets/"
+uber="$HOME/Library/Application Support/Übersicht/widgets"
 
 
 
