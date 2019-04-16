@@ -25,7 +25,7 @@
 	/* Opacity.  Change --pecan-opacity-center to 0 in order to hide date */
 	/* --pecan-opacity affects --pecan-border, so set it to 0 if you would like */
 	/* for every widget to appear independent. */
-	--pecan-opacity: 0.93;
+	--pecan-opacity: 0.95;
 	--pecan-opacity-inner: 1;
 	--pecan-opacity-center: 1;
 
@@ -61,10 +61,10 @@
 	--pecan-alignment-bottom: auto;
 	
 	/* Mono font recommended (alignment depends on character width) */
-	--pecan-font: scientifica, SF Mono, Menlo;
+	--pecan-font: SF Mono, Menlo;
 	--pecan-font-size: 11px;
 	--pecan-font-style: none;
-	--webkit-font-smoothing: none;
+	/* --webkit-font-smoothing: none; */
 
 	/* Xanthia */
 	/* If Xanthia is not installed then these values will be ignored */
