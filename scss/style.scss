@@ -65,7 +65,7 @@
 	--pecan-font-size: 11px;
 	--pecan-font-style: none;
 	--pecan-line-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2));
-	/* --webkit-font-smoothing: none; */
+	/* --webkit-font-smoothing: none; */	
 
 /*************************** xanthia message *****************************/
 /***** if xanthia is not installed then these values will be ignored *****/
@@ -104,6 +104,9 @@
 	--pecan-xanthia-font-style: var(--pecan-font-style);
 	--pecan-xanthia-line-height: var(--pecan-line-height);
 	--pecan-xanthia-text-padding: var(--pecan-text-padding);
+	
+/* fade */
+	--pecan-xanthia-time-visible: auto;
 	
 /**************************** xanthia image ******************************/
 /***** if xanthia is not installed then these values will be ignored *****/
