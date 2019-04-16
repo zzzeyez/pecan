@@ -1,6 +1,6 @@
-# Pecan
+# pecan
 
-Pecan is a bar for macOS.  It was built to be highly configurable and — by default — reports the current workspace, network bandwidth, date, battery percentage and time.
+A bar for macOS.  It was built to be highly configurable and — by default — reports the current workspace, network bandwidth, date, battery percentage and time.
 
 ![Screenshot 1](/screenshots/3.jpg)
 
