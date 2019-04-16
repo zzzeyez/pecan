@@ -1,7 +1,7 @@
-/* Pecan is a bar for Ubersicht */
-/* Written by Daniel Neemann */
+/* pecan is a bar for Ubersicht */
+/* written by daniel neemann (@zzzeyez) */
 
-// Import Colors
+/* import colors */
 @import "/Users/zzzeyez/.cache/wal/colors.scss";
 
 :root {
@@ -66,18 +66,52 @@
 	--pecan-font-style: none;
 	/* --webkit-font-smoothing: none; */
 
-	/* Xanthia */
-	/* If Xanthia is not installed then these values will be ignored */
+	/******************************* Xanthia *********************************/
+	/***** If Xanthia is not installed then these values will be ignored *****/
+	
+	/* background and foreground colors */
 	--pecan-xanthia-bg: none;
 	--pecan-xanthia-fg: #{$color2};
+	
 	/* This is padding from edge of screen */
 	--pecan-xanthia-horizontal: calc(var(--pecan-padding-right) + calc(var(--pecan-text-padding) * 4) + 14ch + calc(3 * var(--pecan-border)));
 	--pecan-xanthia-vertical: calc(var(--pecan-border) + var(--pecan-padding-v));
+
 	/* These are maximum sizes */
 	--pecan-xanthia-width: 73ch;
 	--pecan-xanthia-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2));
 	--pecan-xanthia-border-radius: var(--pecan-border-radius-inner);
 	--pecan-xanthia-shadow: var(--pecan-shadow-inner);
+
+	/* image */
+	--pecan-xanthia-image-background-color; var(--pecan-bg);
+	--pecan-xanthia-image-opacity: 1;
+	--pecan-xanthia-image-shadow: var(--pecan-shadow);
+
+	/* Padding from edge of screen */
+	/* To position top/right/bottom/left see Alignment */
+	--pecan-xanthia-image-margin-vertical: calc(var(--pecan-height) + 15px);
+	--pecan-xanthia-image-margin-horizontal: 15px;
+
+	/* Alignment */
+	/* Set 0 to where you want bar aligned */
+	/* and "auto" where you don't */
+	--pecan-xanthia-image-alignment-right: 0;
+	--pecan-xanthia-image-alignment-top: 0;
+	--pecan-xanthia-image-alignment-bottom: auto;
+	--pecan-xanthia-image-alignment-left: auto;
+
+	/* Bar's total height including --border and excluding padding */
+	--pecan-xanthia-image-size: 150px;
+
+	/* Corner radius (for rounded corners) */
+	--pecan-xanthia-image-border-radius: 8px;
+
+	/* idk what this is tbh*/
+	--pecan-xanthia-image-padding: 0;
+
+	/* Fade */
+	--pecan-xanthia-image-time-visible: 15s;
 }
 
 /* Get monitor width */
