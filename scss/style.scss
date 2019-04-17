@@ -52,7 +52,7 @@
 	--pecan-border-radius-inner: 8px;	
 
 /* inner-horizontal padding.  --pecan-height determines inner-vertical padding */
-	--pecan-text-padding: 0px 3ch;
+	--pecan-text-padding: 3ch ;
 
 /* alignment */
 /* set 0 to where you want the bar aligned */
@@ -112,7 +112,7 @@
 /***** if xanthia is not installed then these values will be ignored *****/
 	
 /* body */
-	--pecan-xanthia-image-background-color; var(--pecan-bg);
+	--pecan-xanthia-image-background-color: var(--pecan-bg);
 	--pecan-xanthia-image-opacity: 1;
 	--pecan-xanthia-image-shadow: var(--pecan-shadow);
 	--pecan-xanthia-image-size: 150px;
@@ -182,7 +182,7 @@
 	right: auto;
 	bottom: var(--pecan-alignment-bottom);
 	left: 0px;
-	padding: var(--pecan-text-padding);
+	padding: 0 var(--pecan-text-padding);
 	margin-top: calc(var(--pecan-padding-v) + var(--pecan-border));
 	margin-bottom: calc(var(--pecan-padding-v) + var(--pecan-border));
 	margin-left: calc(var(--pecan-padding-left) + var(--pecan-border));
@@ -207,7 +207,7 @@
 	right: auto;
 	bottom: var(--pecan-alignment-bottom);
 	left: 0px;
-	padding: var(--pecan-text-padding);
+	padding: 0 var(--pecan-text-padding);
 	margin-top: calc(var(--pecan-border) + var(--pecan-padding-v));
 	margin-bottom: calc(var(--pecan-border) + var(--pecan-padding-v));
 	margin-left: calc(var(--pecan-padding-left) + calc(var(--pecan-text-padding) * 2) + 1ch + calc(var(--pecan-border) * 2));
@@ -228,7 +228,7 @@
 	opacity: var(--pecan-opacity-center);
 	position: absolute;
 	display: inline-block;
-	padding: var(--pecan-text-padding);
+	padding: 0 var(--pecan-text-padding);
 	width: auto;
 	top: var(--pecan-alignment-top);
 	bottom: var(--pecan-alignment-bottom);
@@ -269,7 +269,7 @@
 	position: absolute;
 	background-color: var(--pecan-bg-right2);
 	opacity: var(--pecan-opacity-inner);
-	padding: var(--pecan-text-padding);
+	padding: 0 var(--pecan-text-padding);
 	top: var(--pecan-alignment-top);
 	right: 0px;
 	bottom: var(--pecan-alignment-bottom);
@@ -294,7 +294,7 @@
 	position: absolute;
 	background-color: var(--pecan-bg-right);
 	opacity: var(--pecan-opacity-inner);
-	padding: var(--pecan-text-padding);
+	padding: 0 var(--pecan-text-padding);
 	margin: var(--pecan-border);
 	top: var(--pecan-alignment-top);
 	right: 0px;

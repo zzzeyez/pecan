@@ -1,67 +1,114 @@
-/* Pecan is a bar for Ubersicht */
-/* Written by Daniel Neemann */
+/* pecan is a bar for Ubersicht */
+/* written by daniel neemann (@zzzeyez) */
+/* import colors */
 :root {
-  /* Choose background colors, ordered from left to right */
-  /* Set --pecan-bg-center to "none" to have date's background same as bar */
+  /* choose background colors, ordered from left to right */
+  /* set --pecan-bg-center to "none" to have date's background same as bar */
   --pecan-bg: #222222;
-  --pecan-bg-left: #A0B599;
+  --pecan-bg-left: #62BEC7;
   --pecan-bg-left2: none;
   --pecan-bg-center: none;
   --pecan-bg-right2: none;
   --pecan-bg-right: none;
-  /* Choose foreground colors */
+  /* choose foreground colors */
   --pecan-fg-left: #222222;
-  --pecan-fg-left2: #919c97;
-  --pecan-fg-center: #d0dfd9;
-  --pecan-fg-right2: #919c97;
-  --pecan-fg-right: #d0dfd9;
-  /* Opacity.  Change --pecan-opacity-center to 0 in order to hide date */
+  --pecan-fg-left2: #9ea49f;
+  --pecan-fg-center: #e2ebe4;
+  --pecan-fg-right2: #9ea49f;
+  --pecan-fg-right: #e2ebe4;
+  /* opacity.  change --pecan-opacity-center to 0 in order to hide date */
   /* --pecan-opacity affects --pecan-border, so set it to 0 if you would like */
   /* for every widget to appear independent. */
   --pecan-opacity: 0.95;
   --pecan-opacity-inner: 1;
   --pecan-opacity-center: 1;
-  /* Shadow. */
+  /* shadow */
   --pecan-shadow: 0px 4px 10px 4px rgba(0,0,0,0.15);
   --pecan-shadow-inner: 0px 1px 1px 1px rgba(0,0,0,0.0);
-  /* Bar's total height including --pecan-border and excluding padding */
+  /* bar's total height including --pecan-border and excluding padding */
   --pecan-height: 36px;
-  /* Entire bar's outer padding (use --pecan-border for space between widgets) */
+  /* entire bar's outer padding (use --pecan-border for space between widgets) */
   --pecan-padding-left: 0px;
   --pecan-padding-right: 0px;
   --pecan-padding-v: 0px;
-  /* Border size.  Also functions as space between widgets, */
+  /* border size.  also functions as space between widgets, */
   /* so set --pecan-opacity to 0 if you want widgets to appear independent */
   --pecan-border: 0px;
-  /* Rounded corner radius */
-  /* Inner radius is best suited for when widgets appear independent */
+  /* rounded corner radius */
+  /* inner radius is best suited for when widgets appear independent */
   /* by setting --pecan-opacity to 0 */
   --pecan-border-radius: 0px;
   --pecan-border-radius-inner: 8px;
-  /* Inner-horizontal padding.  --pecan-height determines inner-vertical padding */
-  --pecan-text-padding: 3ch;
-  /* Alignment */
-  /* Set 0 to where you want the bar aligned */
+  /* inner-horizontal padding.  --pecan-height determines inner-vertical padding */
+  --pecan-text-padding: 3ch ;
+  /* alignment */
+  /* set 0 to where you want the bar aligned */
   /* and "auto" where you don't */
   --pecan-alignment-top: 0;
   --pecan-alignment-bottom: auto;
-  /* Mono font recommended (alignment depends on character width) */
+  /* mono font recommended (alignment depends on character width) */
   --pecan-font: SF Mono, Menlo;
   --pecan-font-size: 11px;
   --pecan-font-style: none;
+  --pecan-line-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2));
   /* --webkit-font-smoothing: none; */
-  /* Xanthia */
-  /* If Xanthia is not installed then these values will be ignored */
+  /*************************** xanthia message *****************************/
+  /***** if xanthia is not installed then these values will be ignored *****/
+  /* body */
   --pecan-xanthia-bg: none;
-  --pecan-xanthia-fg: #F8A190;
-  /* This is padding from edge of screen */
-  --pecan-xanthia-horizontal: calc(var(--pecan-padding-right) + calc(var(--pecan-text-padding) * 4) + 14ch + calc(3 * var(--pecan-border)));
-  --pecan-xanthia-vertical: calc(var(--pecan-border) + var(--pecan-padding-v));
-  /* These are maximum sizes */
-  --pecan-xanthia-width: 73ch;
-  --pecan-xanthia-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2));
-  --pecan-xanthia-border-radius: var(--pecan-border-radius-inner);
+  --pecan-xanthia-fg: #67CEE2;
+  --pecan-xanthia-opacity: 1;
   --pecan-xanthia-shadow: var(--pecan-shadow-inner);
+  /* this is padding from edge of screen */
+  /* to position top/right/bottom/left see alignment */
+  --pecan-xanthia-margin-horizontal: calc(var(--pecan-padding-right) + calc(var(--pecan-text-padding) * 4) + 14ch + calc(3 * var(--pecan-border)));
+  --pecan-xanthia-margin-vertical: calc(var(--pecan-border) + var(--pecan-padding-v));
+  /* alignment */
+  /* set 0 to where you want bar aligned */
+  /* and "auto" where you don't */
+  --pecan-xanthia-alignment-top: 0;
+  --pecan-xanthia-alignment-right: 0;
+  --pecan-xanthia-alignment-bottom: auto;
+  --pecan-xanthia-alignment-left: auto;
+  /* these are maximum sizes */
+  --pecan-xanthia-max-width: 73ch;
+  --pecan-xanthia-max-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2));
+  --pecan-xanthia-min-width: none;
+  --pecan-xanthia-min-height: none;
+  /* corner radius (for rounded corners) */
+  --pecan-xanthia-border-radius: var(--pecan-border-radius-inner);
+  /* typography */
+  --pecan-xanthia-font: var(--pecan-font);
+  --pecan-xanthia-font-size: var(--pecan-font-size);
+  --pecan-xanthia-font-style: var(--pecan-font-style);
+  --pecan-xanthia-line-height: var(--pecan-line-height);
+  --pecan-xanthia-text-padding: var(--pecan-text-padding);
+  /* fade */
+  --pecan-xanthia-time-visible: auto;
+  /**************************** xanthia image ******************************/
+  /***** if xanthia is not installed then these values will be ignored *****/
+  /* body */
+  --pecan-xanthia-image-background-color: var(--pecan-bg);
+  --pecan-xanthia-image-opacity: 1;
+  --pecan-xanthia-image-shadow: var(--pecan-shadow);
+  --pecan-xanthia-image-size: 150px;
+  /* padding from edge of screen */
+  /* to position top/right/bottom/left see alignment */
+  --pecan-xanthia-image-margin-vertical: calc(var(--pecan-height) + 15px);
+  --pecan-xanthia-image-margin-horizontal: 15px;
+  /* alignment */
+  /* set 0 to where you want bar aligned */
+  /* and "auto" where you don't */
+  --pecan-xanthia-image-alignment-right: 0;
+  --pecan-xanthia-image-alignment-top: 0;
+  --pecan-xanthia-image-alignment-bottom: auto;
+  --pecan-xanthia-image-alignment-left: auto;
+  /* corner radius (for rounded corners) */
+  --pecan-xanthia-image-border-radius: 8px;
+  /* idk what this is tbh*/
+  --pecan-xanthia-image-padding: 0;
+  /* fade */
+  --pecan-xanthia-image-time-visible: 15s;
 }
 
 /* Get monitor width */
@@ -106,11 +153,11 @@
   right: auto;
   bottom: var(--pecan-alignment-bottom);
   left: 0px;
-  padding: 0px var(--pecan-text-padding);
+  padding: 0 var(--pecan-text-padding);
   margin-top: calc(var(--pecan-padding-v) + var(--pecan-border));
   margin-bottom: calc(var(--pecan-padding-v) + var(--pecan-border));
   margin-left: calc(var(--pecan-padding-left) + var(--pecan-border));
-  line-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2));
+  line-height: var(--pecan-line-height);
   border-top-left-radius: var(--pecan-border-radius);
   border-top-right-radius: var(--pecan-border-radius-inner);
   border-bottom-right-radius: var(--pecan-border-radius-inner);
@@ -131,11 +178,11 @@
   right: auto;
   bottom: var(--pecan-alignment-bottom);
   left: 0px;
-  padding: 0px var(--pecan-text-padding);
+  padding: 0 var(--pecan-text-padding);
   margin-top: calc(var(--pecan-border) + var(--pecan-padding-v));
   margin-bottom: calc(var(--pecan-border) + var(--pecan-padding-v));
   margin-left: calc(var(--pecan-padding-left) + calc(var(--pecan-text-padding) * 2) + 1ch + calc(var(--pecan-border) * 2));
-  line-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2));
+  line-height: var(--pecan-line-height);
   border-top-left-radius: var(--pecan-border-radius-inner);
   border-top-right-radius: var(--pecan-border-radius-inner);
   border-bottom-right-radius: var(--pecan-border-radius-inner);
@@ -152,14 +199,14 @@
   opacity: var(--pecan-opacity-center);
   position: absolute;
   display: inline-block;
-  padding: 0px var(--pecan-text-padding);
+  padding: 0 var(--pecan-text-padding);
   width: auto;
   top: var(--pecan-alignment-top);
   bottom: var(--pecan-alignment-bottom);
   left: 50%;
   transform: translate(-50%);
   margin: var(--pecan-border);
-  line-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2));
+  line-height: var(--pecan-line-height);
   text-align: center;
   border-top-left-radius: var(--pecan-border-radius-inner);
   border-top-right-radius: var(--pecan-border-radius-inner);
@@ -193,7 +240,7 @@
   position: absolute;
   background-color: var(--pecan-bg-right2);
   opacity: var(--pecan-opacity-inner);
-  padding: 0px var(--pecan-text-padding);
+  padding: 0 var(--pecan-text-padding);
   top: var(--pecan-alignment-top);
   right: 0px;
   bottom: var(--pecan-alignment-bottom);
@@ -201,7 +248,7 @@
   margin-top: calc(var(--pecan-padding-v) + var(--pecan-border));
   margin-right: calc(var(--pecan-padding-right) + calc(var(--pecan-text-padding) * 2) + 9ch + calc(var(--pecan-border) * 2));
   margin-bottom: calc(var(--pecan-padding-v) + var(--pecan-border));
-  line-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2));
+  line-height: var(--pecan-line-height);
   border-top-left-radius: var(--pecan-border-radius-inner);
   border-top-right-radius: var(--pecan-border-radius-inner);
   border-bottom-right-radius: var(--pecan-border-radius-inner);
@@ -218,7 +265,7 @@
   position: absolute;
   background-color: var(--pecan-bg-right);
   opacity: var(--pecan-opacity-inner);
-  padding: 0px var(--pecan-text-padding);
+  padding: 0 var(--pecan-text-padding);
   margin: var(--pecan-border);
   top: var(--pecan-alignment-top);
   right: 0px;
@@ -227,7 +274,7 @@
   margin-top: calc(var(--pecan-padding-v) + var(--pecan-border));
   margin-right: calc(var(--pecan-border) + var(--pecan-padding-right));
   margin-bottom: calc(var(--pecan-padding-v) + var(--pecan-border));
-  line-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2));
+  line-height: var(--pecan-line-height);
   border-top-left-radius: var(--pecan-border-radius-inner);
   border-top-right-radius: var(--pecan-border-radius);
   border-bottom-right-radius: var(--pecan-border-radius);
