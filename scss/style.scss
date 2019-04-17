@@ -9,16 +9,16 @@
 /* choose background colors, ordered from left to right */
 /* set --pecan-bg-center to "none" to have date's background same as bar */
 	--pecan-bg: #{$color0};
-	--pecan-bg-left: #{$color1};
-	--pecan-bg-left2: none;
-	--pecan-bg-center: none;
-	--pecan-bg-right2: none;
-	--pecan-bg-right: none;
-	--pecan-fg-left: #{$color0};
-	--pecan-fg-left2: #{$color8};
-	--pecan-fg-center: #{$color7};
-	--pecan-fg-right2: #{$color8};
-	--pecan-fg-right: #{$color7};
+	--pecan-bg-pecanworkspace: #{$color1};
+	--pecan-bg-pecannetwork: none;
+	--pecan-bg-pecandate: none;
+	--pecan-bg-pecanbattery: none;
+	--pecan-bg-pecanclock: none;
+	--pecan-fg-pecanworkspace: #{$color0};
+	--pecan-fg-pecannetwork: #{$color8};
+	--pecan-fg-pecandate: #{$color7};
+	--pecan-fg-pecanbattery: #{$color8};
+	--pecan-fg-pecanclock: #{$color7};
 	--pecan-opacity: 0.95;
 	--pecan-opacity-inner: 1;
 	--pecan-opacity-center: 1;
@@ -132,10 +132,10 @@
 .pecanworkspace {
 	font: var(--pecan-font-size) var(--pecan-font);
 	font-style: var(--pecan-font-style);
-	color: var(--pecan-fg-left);
+	color: var(--pecan-fg-pecanworkspace);
 	display: inline-block;
 	position: absolute;
-	background-color: var(--pecan-bg-left);
+	background-color: var(--pecan-bg-pecanworkspace);
 	opacity: var(--pecan-opacity-inner);
 	top: var(--pecan-alignment-top);
 	right: auto;
@@ -157,9 +157,9 @@
 .pecannetwork {
 	font: var(--pecan-font-size) var(--pecan-font);
 	font-style: var(--pecan-font-style);
-	background-color: var(--pecan-bg-left2);
+	background-color: var(--pecan-bg-pecannetwork);
 	opacity: var(--pecan-opacity-inner);
-	color: var(--pecan-fg-left2);
+	color: var(--pecan-fg-pecannetwork);
 	position: absolute;
 	display: inline-block;
 	top: var(--pecan-alignment-top);
@@ -182,8 +182,8 @@
 .pecandate {
 	font: var(--pecan-font-size) var(--pecan-font);
 	font-style: var(--pecan-font-style);
-	color: var(--pecan-fg-center);
-	background-color: var(--pecan-bg-center);
+	color: var(--pecan-fg-pecandate);
+	background-color: var(--pecan-bg-pecandate);
 	opacity: var(--pecan-opacity-center);
 	position: absolute;
 	display: inline-block;
@@ -207,10 +207,10 @@
 .pecanbattery {
 	font: var(--pecan-font-size) var(--pecan-font);
 	font-style: var(--pecan-font-style);
-	color: var(--pecan-fg-right2);
+	color: var(--pecan-fg-pecanbattery);
  	display: inline-block;
 	position: absolute;
-	background-color: var(--pecan-bg-right2);
+	background-color: var(--pecan-bg-pecanbattery);
 	opacity: var(--pecan-opacity-inner);
 	padding: 0 var(--pecan-text-padding);
 	top: var(--pecan-alignment-top);
@@ -232,10 +232,10 @@
 .pecanclock {
 	font: var(--pecan-font-size) var(--pecan-font);
 	font-style: var(--pecan-font-style);
-	color: var(--pecan-fg-right);
+	color: var(--pecan-fg-pecanclock);
  	display: inline-block;
 	position: absolute;
-	background-color: var(--pecan-bg-right);
+	background-color: var(--pecan-bg-pecanclock);
 	opacity: var(--pecan-opacity-inner);
 	padding: 0 var(--pecan-text-padding);
 	margin: var(--pecan-border);
