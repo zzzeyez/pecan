@@ -1,1 +1,0 @@
-![fillmore](fillmore.jpg)

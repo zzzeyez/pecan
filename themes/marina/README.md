@@ -1,1 +1,0 @@
-![marina](marina.jpg)

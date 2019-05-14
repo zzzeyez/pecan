@@ -16,11 +16,11 @@ uber="$HOME/Library/Application Support/Übersicht/widgets"
 
 
 name="$2"
-themes="$uber/Pecan/themes/$name"
+themes="$uber/pecan/themes"
 
 checkdir() {
-if [ ! -d "$uber/Pecan" ]; then
-	echo "directory $uber/Pecan not found"
+if [ ! -d "$uber/pecan" ]; then
+	echo "directory $uber/pecan not found"
 	echo "please edit line 14 to include location of Übersicht widgets"
 	echo "now exiting.."
 	exit
@@ -30,44 +30,52 @@ fi
 save(){
 	if [[ -z "$name" ]] ; then
 		echo "requires theme name.  try pecan -s name"
-		exit 1
+		exit
 	else
-	mkdir "$themes"
-	cp "$uber/Pecan/style.css" "$themes/style.css" &&
-	cp "$uber/Pecan/scss/style.scss" "$themes/style.scss" &&
-	status="saved"
-	screencapture "$themes/$name.jpg"
-	if command -v convert >/dev/null 2>&1; then
-		convert "$themes/$name.jpg" -geometry 600 -quality 90 "$themes/$name.jpg"
+	if [ ! -d "$themes/$name" ]; then
+		mkdir "$themes/$name"
 	fi
-	touch "$themes/README.md"
+	cp "$uber/pecan/style.css" "$themes/$name/style.css" &&
+	cp "$uber/pecan/scss/style.scss" "$themes/$name/style.scss" &&
+	status="saved"
+	screencapture "$themes/$name/$name.jpg"
+	if command -v convert >/dev/null 2>&1; then
+		convert "$themes/$name/$name.jpg" -geometry 1000 -quality 90 "$themes/$name/$name.jpg"
+	fi
+	touch "$themes/$name/README.md"
 	echo "![$name]($name.jpg)" > "$themes/README.md"
+	echo "pecan style $name $status"
 	fi
 }
 
 load(){
 	if [[ -z "$name" ]] ; then
-		echo "requires theme name.  try pecan -l theme"
-		exit 1
-	else
-	cp "$themes/style.css" "$uber/Pecan/style.css" &&
-	cp "$themes/style.scss" "$uber/Pecan/scss/style.scss" &&
-	status="loaded"
+		dir="$themes"
+		n_files="$(/bin/ls -1 "$dir" | wc -l | cut -f1)"
+		rand_num="$(awk "BEGIN{srand();print int($n_files * rand()) + 1;}")"
+		name="$(/bin/ls -1 "$dir" | sed -ne "${rand_num}p")"
 	fi
+	cp "$themes/$name/style.css" "$uber/pecan/style.css" &&
+	cp "$themes/$name/style.scss" "$uber/pecan/scss/style.scss" &&
+	status="loaded"
+}
+
+preview(){
+	feh "$themes/$name/$name.jpg"
 }
 
 list(){
 	echo "available themes:"
 	ls "$themes"
 	echo "screenshots of themes are located in:"
-	echo "$uber/Pecan/themes/"
+	echo "$uber/pecan/themes/"
 }
 
 notify(){
 	if command -v notify-send >/dev/null 2>&1; then
-		notify-send "✔ Pecan style '$name' $status"
+		notify-send "✔ pecan style $name $status"
 	else
-		echo "Pecan style '$name' $status"
+		echo "pecan style $name $status"
 	fi
 }
 
@@ -78,15 +86,20 @@ refresh(){
 help(){
 	echo "available flags:"
 	echo "list themes: -ls or --list"
+	echo "preview theme with feh: -p or --preview (theme name)"
 	echo "load theme: -l or --load (theme name)"
+	echo "(if no argument is provided, then a random theme will be chose)"
 	echo "save theme: -s or --save (theme name)"
 	echo "help: -h or --help"
 	echo "screenshots of themes are located in:"
-	echo "$uber/Pecan/themes/"
+	echo "$uber/pecan/themes/"
 }
 
 checkdir
 case $1 in
+	-p|--preview)
+		preview
+	;;
 	-l|--load) 
 		load
 		refresh
@@ -94,7 +107,7 @@ case $1 in
 	;;
 	-s|--save)
 		save
-		notify
+		exit
 	;;
 	-h|--help)
 		help

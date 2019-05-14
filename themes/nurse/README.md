@@ -1,1 +1,0 @@
-![nurse](nurse.jpg)

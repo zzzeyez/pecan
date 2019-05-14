@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
 sassc --style expanded "$(dirname "$0")/scss/style.scss" > "$(dirname "$0")/style.css" &
-
 ps cax | grep bersicht > /dev/null
 if [ $? -eq 0 ]; then
-	osascript -e 'tell application "'$(ps ax | grep sicht | awk '{print $5}' | head -1 | cut -d/ -f3 | cut -d. -f1)'" to refresh widget id "Pecan-background-coffee"'
-else
-	exit
+	osascript -e 'tell application "'$(ps ax | grep sicht | awk '{print $5}' | head -1 | cut -d/ -f3 | cut -d. -f1)'" to refresh widget id "pecan-background-coffee"'
+	height="$(awk '/--pecan-chunkwm-bar:/{print $NF}' $(dirname $0)/style.css | tr -d ';')"
+	chunkc set custom_bar_offset_top "$height"
+	chunkc set custom_bar_enabled 1
+	chunkc core::unload tiling.so
+	chunkc core::load tiling.so
 fi

@@ -7,38 +7,37 @@
 :root {
 
 /* background colors */
-	--pecan-bg: #{$color0};
-	--pecan-bg-pecanworkspace: #{$color1};
-	--pecan-bg-pecannetwork: var(--pecan-bg);
-	--pecan-bg-pecandate: var(--pecan-bg);
+	--pecan-bg: #{$color7};
+	--pecan-bg-pecanworkspace: none;
+	--pecan-bg-pecannetwork: none;
+	--pecan-bg-pecandate: none;
 	--pecan-bg-pecanbattery: var(--pecan-bg);
 	--pecan-bg-pecanclock: var(--pecan-bg);
 	--pecan-xanthia-bg: var(--pecan-bg);
 	--pecan-xanthia-image-bg: var(--pecan-bg);
 	
 /* foreground colors */
-	--pecan-fg-pecanworkspace: #{$color0};
-	--pecan-fg-pecannetwork: #{$color1};
-	--pecan-fg-pecandate: #{$color8};
-	--pecan-fg-pecanbattery: #{$color3};
-	--pecan-fg-pecanclock: #{$color4};
-	--pecan-xanthia-fg: #{$color5};
+	--pecan-fg-pecanworkspace: none;
+	--pecan-fg-pecannetwork: none;
+	--pecan-fg-pecandate: none;
+	--pecan-fg-pecanbattery: var(--pecan-xanthia-fg);
+	--pecan-fg-pecanclock: var(--pecan-xanthia-fg);
+	--pecan-xanthia-fg: #{$color0};
 	
 /* size */
-	--pecan-height: 16px;
+	--pecan-height: 18px;
 	--pecan-xanthia-max-width: 1000px;
 	--pecan-xanthia-max-height: none;
 	--pecan-xanthia-min-width: none;
 	--pecan-xanthia-min-height: var(--pecan-height);
-	--pecan-xanthia-image-size: 100px;
-	--pecan-chunkwm-bar: 16px;
+	--pecan-xanthia-image-size: 120px;
 
 /* opacity */
-	--pecan-opacity: 1; /* this value affects --pecan-border */
+	--pecan-opacity: 0; /* this value affects --pecan-border */
 	--pecan-opacity-inner: 1;
-	--pecan-opacity-center: 1;
-	--pecan-xanthia-opacity: 1;
-	--pecan-xanthia-image-opacity: 1;	
+	--pecan-opacity-center: 0;
+	--pecan-xanthia-opacity: 0;
+	--pecan-xanthia-image-opacity: 0;	
 			
 /* alignment */
 	--pecan-alignment-top: 0;
@@ -46,9 +45,9 @@
 	--pecan-alignment-bottom: auto;
 	--pecan-alignment-left: 0;
 	--pecan-xanthia-alignment-top: 0;
-	--pecan-xanthia-alignment-right: 0;
+	--pecan-xanthia-alignment-right: auto;
 	--pecan-xanthia-alignment-bottom: auto;
-	--pecan-xanthia-alignment-left: auto;
+	--pecan-xanthia-alignment-left: 0;
 	--pecan-xanthia-image-alignment-top: 0;
 	--pecan-xanthia-image-alignment-right: 0;
 	--pecan-xanthia-image-alignment-bottom: auto;
@@ -58,27 +57,28 @@
 	--pecan-padding-left: 0px;
 	--pecan-padding-right: var(--pecan-padding-left);
 	--pecan-padding-v: var(--pecan-padding-left);
-	--pecan-xanthia-padding-h: calc(var(--pecan-padding-right) + calc(var(--pecan-text-padding) * 4) + 14ch + calc(3 * var(--pecan-border))); 
-	--pecan-xanthia-padding-v: calc(var(--pecan-border) + var(--pecan-padding-v));
-	--pecan-xanthia-image-padding-v: calc(var(--pecan-height) + var(--pecan-xanthia-image-padding-h));
-	--pecan-xanthia-image-padding-h: 6px;
+	--pecan-xanthia-padding-h: var(--pecan-padding-left); 
+	--pecan-xanthia-padding-v: var(--pecan-padding-left);
+	--pecan-xanthia-image-padding-v: var(--pecan-padding-left);
+	--pecan-xanthia-image-padding-h: var(--pecan-padding-left);
+	--pecan-chunkwm-bar: 0px;
 
 /* shadow */
 	--pecan-shadow: 0px 4px 10px 4px rgba(0,0,0,0.15);
-	--pecan-shadow-inner: 0px 1px 1px 1px rgba(0,0,0,0.0);
+	--pecan-shadow-inner: 0px 1px 1px 1px rgba(0,0,0,0.15);
 	--pecan-xanthia-shadow: var(--pecan-shadow-inner);
-	--pecan-xanthia-image-shadow: var(--pecan-shadow);
+	--pecan-xanthia-image-shadow: 0;
 	
 /* border */
 	--pecan-border: 0px;
 	--pecan-border-radius: 0px;
-	--pecan-border-radius-inner: 3px;
+	--pecan-border-radius-inner: 1px;
 	--pecan-xanthia-border-radius: var(--pecan-border-radius-inner);
 	--pecan-xanthia-image-border-radius: var(--pecan-border-radius-inner);
-	--pecan-xanthia-image-border: 0px;
+	--pecan-xanthia-image-border: 0;
 	
 /* typography */
-	--pecan-font: scientifica, SF Mono, Menlo;
+	--pecan-font: iosevka term, SF Mono, Menlo;
 	--pecan-font-size: 11px;
 	--pecan-font-style: regular;
 	--pecan-line-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2));
@@ -92,7 +92,7 @@
 
 /* fade (to disable, set as "auto") */
 	--pecan-xanthia-time-visible: auto;
-	--pecan-xanthia-image-time-visible: 60s;
+	--pecan-xanthia-image-time-visible: 10s;
 }
 
 /* get monitor width */
@@ -104,7 +104,7 @@
 /* bar background */
 .pecanbackground {
 	background-color: var(--pecan-bg);
-	display: block;
+	display: none;
 	position: absolute;
   	height: var(--pecan-height);
 	top: var(--pecan-alignment-top);
@@ -145,7 +145,7 @@
 	font: var(--pecan-font-size) var(--pecan-font);
 	font-style: var(--pecan-font-style);
 	color: var(--pecan-fg-pecanworkspace);
-	display: inline-block;
+	display: none;
 	position: absolute;
 	background-color: var(--pecan-bg-pecanworkspace);
 	opacity: var(--pecan-opacity-inner);
@@ -173,7 +173,7 @@
 	opacity: var(--pecan-opacity-inner);
 	color: var(--pecan-fg-pecannetwork);
 	position: absolute;
-	display: inline-block;
+	display: none;
 	top: var(--pecan-alignment-top);
 	right: auto;
 	bottom: var(--pecan-alignment-bottom);
@@ -198,7 +198,7 @@
 	background-color: var(--pecan-bg-pecandate);
 	opacity: var(--pecan-opacity-center);
 	position: absolute;
-	display: inline-block;
+	display: none;
 	padding: 0 var(--pecan-text-padding);
 	width: auto;
 	top: var(--pecan-alignment-top);
@@ -230,7 +230,8 @@
 	bottom: var(--pecan-alignment-bottom);
 	left: auto;
 	margin-top: calc(var(--pecan-padding-v) + var(--pecan-border));
-	margin-right: calc(var(--pecan-padding-right) + calc(var(--pecan-text-padding) * 1) + 10ch + calc(var(--pecan-border) * 2));
+	/* margin-right: calc(var(--pecan-padding-right) + calc(var(--pecan-text-padding) * 1) + 9ch + calc(var(--pecan-border) * 2)); */
+	margin-right: 0px;
 	margin-bottom: calc(var(--pecan-padding-v) + var(--pecan-border));
 	line-height:  var(--pecan-line-height);
 	border-top-left-radius: var(--pecan-border-radius-inner);
@@ -245,7 +246,7 @@
 	font: var(--pecan-font-size) var(--pecan-font);
 	font-style: var(--pecan-font-style);
 	color: var(--pecan-fg-pecanclock);
- 	display: inline-block;
+ 	display: none;
 	position: absolute;
 	background-color: var(--pecan-bg-pecanclock);
 	opacity: var(--pecan-opacity-inner);
