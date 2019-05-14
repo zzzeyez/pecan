@@ -3,8 +3,8 @@
 /* import colors */
 :root {
   /* background colors */
-  --pecan-bg: #2e2e2e;
-  --pecan-bg-pecanworkspace: #B3A4A3;
+  --pecan-bg: #1e1e1e;
+  --pecan-bg-pecanworkspace: #CAF2D7;
   --pecan-bg-pecannetwork: var(--pecan-bg);
   --pecan-bg-pecandate: var(--pecan-bg);
   --pecan-bg-pecanbattery: var(--pecan-bg);
@@ -12,12 +12,12 @@
   --pecan-xanthia-bg: var(--pecan-bg);
   --pecan-xanthia-image-bg: var(--pecan-bg);
   /* foreground colors */
-  --pecan-fg-pecanworkspace: #2e2e2e;
-  --pecan-fg-pecannetwork: #B3A4A3;
+  --pecan-fg-pecanworkspace: #1e1e1e;
+  --pecan-fg-pecannetwork: #CAF2D7;
   --pecan-fg-pecandate: #aaaaaa;
-  --pecan-fg-pecanbattery: #C9C9C7;
-  --pecan-fg-pecanclock: #D8EDF1;
-  --pecan-xanthia-fg: #CFFCFB;
+  --pecan-fg-pecanbattery: #7FC9B2;
+  --pecan-fg-pecanclock: #49B5A6;
+  --pecan-xanthia-fg: #FF9596;
   /* size */
   --pecan-height: 16px;
   --pecan-xanthia-max-width: 1000px;

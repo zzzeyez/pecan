@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 sassc --style expanded "$(dirname "$0")/scss/style.scss" > "$(dirname "$0")/style.css" &
 ps cax | grep bersicht > /dev/null
 if [ $? -eq 0 ]; then
@@ -10,3 +9,6 @@ if [ $? -eq 0 ]; then
 	chunkc core::unload tiling.so
 	chunkc core::load tiling.so
 fi
+source "${HOME}/.cache/wal/colors.sh"
+bg="$(echo $color0 | tr -d '#' | head -c 1)"
+if [[ $bg =~ [a-zA-Z] ]]; then darkmode false; else darkmode true; fi

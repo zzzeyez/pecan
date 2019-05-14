@@ -4,7 +4,7 @@
 :root {
   /* background colors */
   --pecan-bg: #151515;
-  --pecan-bg-pecanworkspace: #92D8D7;
+  --pecan-bg-pecanworkspace: none;
   --pecan-bg-pecannetwork: none;
   --pecan-bg-pecandate: none;
   --pecan-bg-pecanbattery: none;
@@ -12,26 +12,26 @@
   --pecan-xanthia-bg: none;
   --pecan-xanthia-image-bg: none;
   /* foreground colors */
-  --pecan-fg-pecanworkspace: #151515;
-  --pecan-fg-pecannetwork: #92D8D7;
+  --pecan-fg-pecanworkspace: #ffffff;
+  --pecan-fg-pecannetwork: #aaaaaa;
   --pecan-fg-pecandate: #aaaaaa;
-  --pecan-fg-pecanbattery: #BDB8F5;
-  --pecan-fg-pecanclock: #CFC6D6;
-  --pecan-xanthia-fg: #D9CBCE;
+  --pecan-fg-pecanbattery: #ffffff;
+  --pecan-fg-pecanclock: #ffffff;
+  --pecan-xanthia-fg: #9AE6C6;
   /* size */
-  --pecan-height: 20px;
+  --pecan-height: 48px;
   --pecan-xanthia-max-width: 1000px;
   --pecan-xanthia-max-height: none;
   --pecan-xanthia-min-width: none;
   --pecan-xanthia-min-height: var(--pecan-height);
-  --pecan-xanthia-image-size: 100px;
-  --pecan-chunkwm-bar: 20px;
+  --pecan-xanthia-image-size: var(--pecan-height);
+  --pecan-chunkwm-bar: 48px;
   /* opacity */
-  --pecan-opacity: 1;
+  --pecan-opacity: 0.97;
   /* this value affects --pecan-border */
   --pecan-opacity-inner: 1;
   --pecan-opacity-center: 1;
-  --pecan-xanthia-opacity: 1;
+  --pecan-xanthia-opacity: 0;
   --pecan-xanthia-image-opacity: 1;
   /* alignment */
   --pecan-alignment-top: 0;
@@ -48,30 +48,30 @@
   --pecan-xanthia-image-alignment-left: auto;
   /* padding */
   --pecan-padding-left: 0px;
-  --pecan-padding-right: var(--pecan-padding-left);
+  --pecan-padding-right: 0px;
   --pecan-padding-v: var(--pecan-padding-left);
-  --pecan-xanthia-padding-h: calc(var(--pecan-padding-right) + calc(var(--pecan-text-padding) * 4) + 14ch + calc(3 * var(--pecan-border)));
+  --pecan-xanthia-padding-h: var(--pecan-xanthia-image-size);
   --pecan-xanthia-padding-v: calc(var(--pecan-border) + var(--pecan-padding-v));
-  --pecan-xanthia-image-padding-v: calc(var(--pecan-height) + var(--pecan-xanthia-image-padding-h));
-  --pecan-xanthia-image-padding-h: 6px;
+  --pecan-xanthia-image-padding-v: var(--pecan-padding-v);
+  --pecan-xanthia-image-padding-h: var(--pecan-padding-right);
   /* shadow */
   --pecan-shadow: 0px 4px 10px 4px rgba(0,0,0,0.15);
   --pecan-shadow-inner: 0px 1px 1px 1px rgba(0,0,0,0.0);
   --pecan-xanthia-shadow: var(--pecan-shadow-inner);
-  --pecan-xanthia-image-shadow: var(--pecan-shadow);
+  --pecan-xanthia-image-shadow: var(--pecan-shadow-inner);
   /* border */
   --pecan-border: 0px;
   --pecan-border-radius: 0px;
-  --pecan-border-radius-inner: 3px;
+  --pecan-border-radius-inner: 0px;
   --pecan-xanthia-border-radius: var(--pecan-border-radius-inner);
   --pecan-xanthia-image-border-radius: var(--pecan-border-radius-inner);
   --pecan-xanthia-image-border: 0px;
   /* typography */
-  --pecan-font: Menlo;
+  --pecan-font: scientifica, SF Mono, Menlo;
   --pecan-font-size: 11px;
   --pecan-font-style: regular;
   --pecan-line-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2));
-  --pecan-text-padding: 2ch;
+  --pecan-text-padding: 4ch;
   --webkit-font-smoothing: none;
   --pecan-xanthia-font: var(--pecan-font);
   --pecan-xanthia-font-size: var(--pecan-font-size);
@@ -80,7 +80,7 @@
   --pecan-xanthia-text-padding: var(--pecan-text-padding);
   /* fade (to disable, set as "auto") */
   --pecan-xanthia-time-visible: auto;
-  --pecan-xanthia-image-time-visible: 60s;
+  --pecan-xanthia-image-time-visible: auto;
 }
 
 /* get monitor width */
@@ -169,7 +169,7 @@
   padding: 0 var(--pecan-text-padding);
   margin-top: calc(var(--pecan-border) + var(--pecan-padding-v));
   margin-bottom: calc(var(--pecan-border) + var(--pecan-padding-v));
-  margin-left: calc(var(--pecan-padding-left) + calc(var(--pecan-text-padding) * 2) + 1ch + calc(var(--pecan-border) * 2));
+  margin-left: calc(var(--pecan-padding-left) + calc(var(--pecan-text-padding) * 1) + 1ch + calc(var(--pecan-border) * 2));
   line-height: var(--pecan-line-height);
   border-top-left-radius: var(--pecan-border-radius-inner);
   border-top-right-radius: var(--pecan-border-radius-inner);
@@ -208,7 +208,7 @@
   font: var(--pecan-font-size) var(--pecan-font);
   font-style: var(--pecan-font-style);
   color: var(--pecan-fg-pecanbattery);
-  display: inline-block;
+  display: none;
   position: absolute;
   background-color: var(--pecan-bg-pecanbattery);
   opacity: var(--pecan-opacity-inner);
@@ -218,7 +218,7 @@
   bottom: var(--pecan-alignment-bottom);
   left: auto;
   margin-top: calc(var(--pecan-padding-v) + var(--pecan-border));
-  margin-right: calc(var(--pecan-padding-right) + calc(var(--pecan-text-padding) * 2) + 9ch + calc(var(--pecan-border) * 2));
+  margin-right: calc(var(--pecan-padding-right) + calc(var(--pecan-text-padding) * 1) + 10ch + var(--pecan-xanthia-image-size) + calc(var(--pecan-border) * 2));
   margin-bottom: calc(var(--pecan-padding-v) + var(--pecan-border));
   line-height: var(--pecan-line-height);
   border-top-left-radius: var(--pecan-border-radius-inner);
@@ -233,7 +233,7 @@
   font: var(--pecan-font-size) var(--pecan-font);
   font-style: var(--pecan-font-style);
   color: var(--pecan-fg-pecanclock);
-  display: inline-block;
+  display: none;
   position: absolute;
   background-color: var(--pecan-bg-pecanclock);
   opacity: var(--pecan-opacity-inner);
@@ -244,7 +244,7 @@
   bottom: var(--pecan-alignment-bottom);
   left: auto;
   margin-top: calc(var(--pecan-padding-v) + var(--pecan-border));
-  margin-right: calc(var(--pecan-border) + var(--pecan-padding-right));
+  margin-right: calc(var(--pecan-border) + var(--pecan-padding-right) + var(--pecan-xanthia-image-size));
   margin-bottom: calc(var(--pecan-padding-v) + var(--pecan-border));
   line-height: var(--pecan-line-height);
   border-top-left-radius: var(--pecan-border-radius-inner);

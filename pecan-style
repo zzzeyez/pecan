@@ -17,6 +17,7 @@ uber="$HOME/Library/Application Support/Übersicht/widgets"
 
 name="$2"
 themes="$uber/pecan/themes"
+cache="${HOME}/.cache"
 
 checkdir() {
 if [ ! -d "$uber/pecan" ]; then
@@ -29,9 +30,9 @@ fi
 
 save(){
 	if [[ -z "$name" ]] ; then
-		echo "requires theme name.  try pecan -s name"
-		exit
-	else
+		name="$(cat $cache/pecan)"
+		echo "no name supplied, using name $name"
+	fi
 	if [ ! -d "$themes/$name" ]; then
 		mkdir "$themes/$name"
 	fi
@@ -41,9 +42,8 @@ save(){
 	screencapture "$themes/$name/$name.jpg"
 	if command -v convert >/dev/null 2>&1; then
 		convert "$themes/$name/$name.jpg" -geometry 1000 -quality 90 "$themes/$name/$name.jpg"
-	fi
 	touch "$themes/$name/README.md"
-	echo "![$name]($name.jpg)" > "$themes/README.md"
+	echo "![$name]($name.jpg)" > "$themes/$name/README.md"
 	echo "pecan style $name $status"
 	fi
 }
@@ -57,7 +57,7 @@ load(){
 	fi
 	cp "$themes/$name/style.css" "$uber/pecan/style.css" &&
 	cp "$themes/$name/style.scss" "$uber/pecan/scss/style.scss" &&
-	status="loaded"
+	status="loaded" & echo "$name" > "$cache/pecan"
 }
 
 preview(){
@@ -88,8 +88,9 @@ help(){
 	echo "list themes: -ls or --list"
 	echo "preview theme with feh: -p or --preview (theme name)"
 	echo "load theme: -l or --load (theme name)"
-	echo "(if no argument is provided, then a random theme will be chose)"
+	echo "(if no argument is provided, then a random theme will be chosen)"
 	echo "save theme: -s or --save (theme name)"
+	echo "(if no argument is provided, then then the most recently loaded will be chosen)"
 	echo "help: -h or --help"
 	echo "screenshots of themes are located in:"
 	echo "$uber/pecan/themes/"
@@ -103,7 +104,7 @@ case $1 in
 	-l|--load) 
 		load
 		refresh
-		notify
+		#notify
 	;;
 	-s|--save)
 		save
