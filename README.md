@@ -1,14 +1,8 @@
 # pecan
 
-A bar for macOS.  It was built to be highly configurable and — by default — reports the current workspace, network bandwidth, date, battery percentage and time.
-
-![Screenshot 1](/screenshots/3.jpg)
-
-![Screenshot 2](/screenshots/4.jpg)
+A bar for macOS.  Reports — by default — the current workspace, network bandwidth, date, battery percentage and time.
 
 ![Screenshot 3](/screenshots/1.jpg)
-
-![Screenshot 4](/screenshots/2.jpg)
 
 ## Instructions
 
@@ -29,13 +23,18 @@ Pecan includes a tool `pecan-style` to allow users to save and load themes.  The
 To install `pecan-style`, first place it in your $PATH
 
 ```
-ln -s "$HOME/Library/Application Support/Übersicht/widgets/Pecan/pecan-style" "/usr/local/bin"
+ln -s "$HOME/Library/Application Support/Übersicht/widgets/pecan/pecan-style" "/usr/local/bin/pecan-style"
 ```
 
-Then if you want to load the Fillmore theme,  you do it like so:
+Then if you want to load the default theme,  you do it like so:
 
 ```
 pecan-style --load fillmore
+```
+
+For more info on `pecan-style` do:
+```
+pecan-style --help
 ```
 
 You can also save and list themes by — respectively — using `--save` and `--list`. 
@@ -46,7 +45,7 @@ You can also save and list themes by — respectively — using `--save` and `--
 
 Because Pecan is styled using CSS3 variables, the top lines of `style.css` can easily be edited to change properties like opacity, alignment, padding, colors and more.  If you are using this bar with Wal, then you should be editing `scss/style.scss` instead.
 
-#### Pecan + Xanthia
+#### pecan + xanthia
 
 If `Xanthia` is installed then it will now use `Pecan`'s CSS/SCSS files.
 
