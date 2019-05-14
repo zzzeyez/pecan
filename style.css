@@ -4,7 +4,7 @@
 :root {
   /* background colors */
   --pecan-bg: #151515;
-  --pecan-bg-pecanworkspace: #92D8D7;
+  --pecan-bg-pecanworkspace: #FDD7FB;
   --pecan-bg-pecannetwork: none;
   --pecan-bg-pecandate: none;
   --pecan-bg-pecanbattery: none;
@@ -13,11 +13,11 @@
   --pecan-xanthia-image-bg: none;
   /* foreground colors */
   --pecan-fg-pecanworkspace: #151515;
-  --pecan-fg-pecannetwork: #92D8D7;
+  --pecan-fg-pecannetwork: #FDD7FB;
   --pecan-fg-pecandate: #aaaaaa;
-  --pecan-fg-pecanbattery: #BDB8F5;
-  --pecan-fg-pecanclock: #CFC6D6;
-  --pecan-xanthia-fg: #D9CBCE;
+  --pecan-fg-pecanbattery: #D2D6FE;
+  --pecan-fg-pecanclock: #B7DCE3;
+  --pecan-xanthia-fg: #9BF9E1;
   /* size */
   --pecan-height: 20px;
   --pecan-xanthia-max-width: 1000px;
