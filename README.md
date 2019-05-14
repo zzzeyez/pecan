@@ -29,7 +29,7 @@ ln -s "$HOME/Library/Application Support/Übersicht/widgets/pecan/pecan-style" "
 Then if you want to load the default theme,  you do it like so:
 
 ```
-pecan-style --load fillmore
+pecan-style --load default
 ```
 
 For more info on `pecan-style` do:
