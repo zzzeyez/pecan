@@ -80,7 +80,9 @@ notify(){
 }
 
 refresh(){
-	osascript -e 'tell application "'$(ps ax | grep sicht | awk '{print $5}' | head -1 | cut -d/ -f3 | cut -d. -f1)'" to refresh'
+	# stupid umlaut character
+	# osascript -e 'tell application "'$(ps ax | grep sicht | awk '{print $5}' | head -1 | cut -d/ -f3 | cut -d. -f1)'" to refresh'
+	osascript -e 'tell application "Übersicht" to refresh widget id "pecan-background-coffee"'
 }
 
 help(){
