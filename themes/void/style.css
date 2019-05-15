@@ -9,7 +9,7 @@
   --pecan-bg-pecandate: none;
   --pecan-bg-pecanbattery: none;
   --pecan-bg-pecanclock: none;
-  --pecan-xanthia-bg: #151515;
+  --pecan-xanthia-bg: #fefefe;
   --pecan-xanthia-image-bg: var(--pecan-bg);
   /* foreground colors */
   --pecan-fg-pecanworkspace: none;
@@ -17,7 +17,7 @@
   --pecan-fg-pecandate: none;
   --pecan-fg-pecanbattery: none;
   --pecan-fg-pecanclock: none;
-  --pecan-xanthia-fg: #ffffff;
+  --pecan-xanthia-fg: #222222;
   /* size */
   --pecan-height: 64px;
   --pecan-xanthia-max-width: none;
@@ -53,12 +53,12 @@
   --pecan-xanthia-padding-v: var(--pecan-padding-v);
   --pecan-xanthia-image-padding-v: var(--pecan-padding-v);
   --pecan-xanthia-image-padding-h: var(--pecan-padding-left);
-  --pecan-chunkwm-bar: 100px;
+  --pecan-chunkwm-bar: 0px;
   /* shadow */
   --pecan-shadow: 0px 4px 10px 4px rgba(0,0,0,0.15);
-  --pecan-shadow-inner: 0px 1px 1px 1px rgba(0,0,0,0.0);
-  --pecan-xanthia-shadow: var(--pecan-shadow);
-  --pecan-xanthia-image-shadow: var(--pecan-shadow);
+  --pecan-shadow-inner: 0px 1px 1px 0px rgba(0,0,0,0.1);
+  --pecan-xanthia-shadow: var(--pecan-shadow-inner);
+  --pecan-xanthia-image-shadow: 0px 1px 1px 1px rgba(0,0,0,0.1);
   /* border */
   --pecan-border: 0px;
   --pecan-border-radius: 0px;

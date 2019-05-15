@@ -49,6 +49,7 @@ save(){
 }
 
 load(){
+	status="loaded"
 	if [[ -z "$name" ]] ; then
 		dir="$themes"
 		n_files="$(/bin/ls -1 "$dir" | wc -l | cut -f1)"
@@ -57,7 +58,7 @@ load(){
 	fi
 	cp "$themes/$name/style.css" "$uber/pecan/style.css" &&
 	cp "$themes/$name/style.scss" "$uber/pecan/scss/style.scss" &&
-	status="loaded" & echo "$name" > "$cache/pecan"
+	echo "$name" > "$cache/pecan"
 }
 
 preview(){
@@ -106,11 +107,11 @@ case $1 in
 	-l|--load) 
 		load
 		refresh
-		#notify
+		notify
 	;;
 	-s|--save)
 		save
-		exit
+		notify
 	;;
 	-h|--help)
 		help
