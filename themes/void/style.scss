@@ -57,7 +57,7 @@
 	--pecan-padding-left: 24px;
 	--pecan-padding-right: 0px;
 	--pecan-padding-v: 24px;
-	--pecan-xanthia-padding-h: calc(var(--pecan-xanthia-image-size) + var(--pecan-padding-left) - var(--pecan-border-radius-inner)); 
+	--pecan-xanthia-padding-h: calc(var(--pecan-xanthia-image-size) + var(--pecan-padding-left)); 
 	--pecan-xanthia-padding-v: var(--pecan-padding-v);
 	--pecan-xanthia-image-padding-v: var(--pecan-padding-v);
 	--pecan-xanthia-image-padding-h: var(--pecan-padding-left);
@@ -71,10 +71,12 @@
 	
 /* border */
 	--pecan-border: 0px;
-	--pecan-border-radius: 0px;
-	--pecan-border-radius-inner: 3px;
-	--pecan-xanthia-border-radius: var(--pecan-border-radius-inner);
-	--pecan-xanthia-image-border-radius: var(--pecan-border-radius-inner);
+	--pecan-border-radius: 3px;
+	--pecan-border-radius-inner: 0px;
+	--pecan-xanthia-border-radius-left: var(--pecan-border-radius-inner);
+	--pecan-xanthia-border-radius-right: var(--pecan-border-radius);
+	--pecan-xanthia-image-border-radius-left: var(--pecan-border-radius);
+	--pecan-xanthia-image-border-radius-right: var(--pecan-border-radius-inner);
 	--pecan-xanthia-image-border: 0px;
 	
 /* typography */
