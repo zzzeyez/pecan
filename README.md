@@ -6,9 +6,12 @@ A bar for macOS.  Reports — by default — the current workspace, network band
 
 ## Instructions
 
-`pecan` requires [Übersicht](http://tracesof.net/uebersicht/).  Once Übersicht is installed, you can clone this repository to where your Übersicht bars are placed.
+`pecan` requires [Übersicht](http://tracesof.net/uebersicht/).  Once Übersicht is installed, download this repository to wherever your widgets are stored.
 
+This can be done via the terminal like so:
 ```
+brew tap caskroom/cask
+brew cask install ubersicht
 git clone https://github.com/zzzeyez/pecan.git "$HOME/Library/Application Support/Übersicht/widgets/pecan"
 ```
 
