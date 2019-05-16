@@ -5,39 +5,30 @@
 # requires Übersicht
 # optional dependency: `imagemagick` (to save screenshots when saving theme)
 
-
-
-#########################################
-# change the variable below to point to #
-# wherever your Übersicht widgets are.  #
-#########################################
-uber="$HOME/Library/Application Support/Übersicht/widgets"
-
-
-
 name="$2"
-themes="$uber/pecan/themes"
-cache="${HOME}/.cache"
 
-checkdir() {
-if [ ! -d "$uber/pecan" ]; then
-	echo "directory $uber/pecan not found"
-	echo "please edit line 14 to include location of Übersicht widgets"
-	echo "now exiting.."
-	exit
-fi
+setup() {
+	SOURCE="${BASH_SOURCE[0]}"
+	while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
+		DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
+		SOURCE="$(readlink "$SOURCE")"
+		[[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
+	done
+	pecan="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
+	themes="$pecan/themes"
+	cache="$pecan/.cache"
 }
 
 save(){
 	if [[ -z "$name" ]] ; then
-		name="$(cat $cache/pecan)"
+		name="$(cat $cache)"
 		echo "no name supplied, using name $name"
 	fi
 	if [ ! -d "$themes/$name" ]; then
 		mkdir "$themes/$name"
 	fi
-	cp "$uber/pecan/style.css" "$themes/$name/style.css" &&
-	cp "$uber/pecan/scss/style.scss" "$themes/$name/style.scss" &&
+	cp "$pecan/style.css" "$themes/$name/style.css" &&
+	cp "$pecan/scss/style.scss" "$themes/$name/style.scss" &&
 	status="saved"
 	screencapture "$themes/$name/$name.jpg"
 	if command -v convert >/dev/null 2>&1; then
@@ -56,12 +47,15 @@ load(){
 		rand_num="$(awk "BEGIN{srand();print int($n_files * rand()) + 1;}")"
 		name="$(/bin/ls -1 "$dir" | sed -ne "${rand_num}p")"
 	fi
-	cp "$themes/$name/style.css" "$uber/pecan/style.css" &&
-	cp "$themes/$name/style.scss" "$uber/pecan/scss/style.scss" &&
-	echo "$name" > "$cache/pecan"
+	cp "$themes/$name/style.css" "$pecan/style.css" &&
+	cp "$themes/$name/style.scss" "$pecan/scss/style.scss" &&
+	echo "$name" > "$cache"
 }
 
 preview(){
+	if [[ -z "$name" ]] ; then
+		name="$(cat $cache)"
+	fi
 	feh "$themes/$name/$name.jpg"
 }
 
@@ -69,7 +63,7 @@ list(){
 	echo "available themes:"
 	ls "$themes"
 	echo "screenshots of themes are located in:"
-	echo "$uber/pecan/themes/"
+	echo "$pecan/themes/"
 }
 
 notify(){
@@ -81,9 +75,22 @@ notify(){
 }
 
 refresh(){
-	# stupid umlaut character
-	# osascript -e 'tell application "'$(ps ax | grep sicht | awk '{print $5}' | head -1 | cut -d/ -f3 | cut -d. -f1)'" to refresh'
-	osascript -e 'tell application "Übersicht" to refresh widget id "pecan-background-coffee"'
+	# check if ubersicht is running
+	ps cax | grep sicht > /dev/null
+	if [ $? -eq 0 ]; then
+		# stupid umlaut character
+		ubersicht="$(ps ax | grep sicht | awk '{print $5}' | head -1 | cut -d/ -f3 | cut -d. -f1)"
+		if [[ "$ubersicht" = "UM-LM^Hbersicht" ]] ; then
+			ubersicht="Übersicht"
+		fi
+	osascript -e 'tell application "'$ubersicht'" to refresh widget id "pecan-background-coffee"'
+	else
+		echo "Ubersicht is not running."
+	fi
+}
+
+getname() {
+	echo "$(cat $cache)"
 }
 
 help(){
@@ -94,32 +101,42 @@ help(){
 	echo "(if no argument is provided, then a random theme will be chosen)"
 	echo "save theme: -s or --save (theme name)"
 	echo "(if no argument is provided, then then the most recently loaded will be chosen)"
+	echo "echo current theme: -v"
 	echo "help: -h or --help"
 	echo "screenshots of themes are located in:"
-	echo "$uber/pecan/themes/"
+	echo "$pecan/themes/"
 }
 
-checkdir
 case $1 in
 	-p|--preview)
+		setup
 		preview
 	;;
-	-l|--load) 
+	-l|--load)
+		setup
 		load
 		refresh
 		notify
 	;;
 	-s|--save)
+		setup
 		save
 		notify
 	;;
+	-v)
+		setup
+		getname
+	;;
 	-h|--help)
 		help
+		exit
 	;;
 	-ls|--list)
+		setup
 		list
 	;;
 	*)
 		help
+		exit
 	;;
 esac
