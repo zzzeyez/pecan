@@ -20,8 +20,6 @@ If Übersicht is running, then the bar should appear.
 
 `pecan` includes a tool `pecan-style` to allow users to save and load themes.  There are, by default, a few included themes.
 
-To install `pecan-style`, first place it in your $PATH
-
 ```
 ln -s "$HOME/Library/Application Support/Übersicht/widgets/pecan/pecan-style" "/usr/local/bin/pecan-style"
 ```
@@ -36,8 +34,6 @@ For more info on `pecan-style` do:
 ```
 pecan-style --help
 ```
-
-(These instructions assume your Übersicht widgets are stored in the default location.  If they are not, then you will need to manually edit line 14 to include the correct location and copy the script into your `$PATH` yourself.)
 
 #### Create themes
 
@@ -85,6 +81,6 @@ sed -i -e "s/behaviors/$USER/g" "$HOME/Library/Application Support/Übersicht/wi
 Now you can run the script to use Wal's palettes:
 
 ```
-bash "$HOME/Library/Application Support/Übersicht/widgets/pecan/wal-set"
+bash "./wal-set"
 ```
 
