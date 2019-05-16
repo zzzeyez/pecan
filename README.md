@@ -6,7 +6,9 @@ A bar for macOS.  Reports — by default — the current workspace, network band
 
 ## Instructions
 
-`pecan` requires [Übersicht](http://tracesof.net/uebersicht/).  Once Übersicht is installed, download this repository to wherever your widgets are stored.
+`pecan` requires [Übersicht](http://tracesof.net/uebersicht/).  
+
+Once Übersicht is installed, download this repository to wherever your widgets are stored (by default ~/Library/Application Support/Übersicht/widgets/).
 
 This can be done via the terminal like so:
 ```
@@ -84,6 +86,5 @@ sed -i -e "s/behaviors/$USER/g" "$HOME/Library/Application Support/Übersicht/wi
 Now you can run the script to use Wal's palettes:
 
 ```
-bash "./wal-set"
+bash "~/Library/Application Support/Übersicht/widgets/pecan/wal-set"
 ```
-
