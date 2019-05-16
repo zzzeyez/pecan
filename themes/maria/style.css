@@ -63,8 +63,10 @@
   --pecan-border: 0px;
   --pecan-border-radius: 0px;
   --pecan-border-radius-inner: 3px;
-  --pecan-xanthia-border-radius: var(--pecan-border-radius-inner);
-  --pecan-xanthia-image-border-radius: var(--pecan-border-radius-inner);
+  --pecan-xanthia-border-radius-left: var(--pecan-border-radius-inner);
+  --pecan-xanthia-border-radius-right: var(--pecan-border-radius-inner);
+  --pecan-xanthia-image-border-radius-left: var(--pecan-border-radius-inner);
+  --pecan-xanthia-image-border-radius-right: var(--pecan-border-radius-inner);
   --pecan-xanthia-image-border: 0px;
   /* typography */
   --pecan-font: scientifica, SF Mono, Menlo;
