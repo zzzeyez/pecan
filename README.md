@@ -1,11 +1,9 @@
 # pecan
+![Screenshot 3](/screenshots/1.jpg)
 
 A bar for macOS.  Reports — by default — the current workspace, network bandwidth, date, battery percentage and time.
 
-![Screenshot 3](/screenshots/1.jpg)
-
 ## Instructions
-
 `pecan` requires [Übersicht](http://tracesof.net/uebersicht/).  
 
 Once Übersicht is installed, download this repository to wherever your widgets are stored (by default ~/Library/Application Support/Übersicht/widgets/).
