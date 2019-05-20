@@ -25,13 +25,13 @@
 	--pecan-xanthia-fg: #{$color1};
 	
 /* size */
-	--pecan-height: 48px;
+	--pecan-height: 42px;
+	--pecan-chunkwm-bar: 42px;
 	--pecan-xanthia-max-width: 1000px;
 	--pecan-xanthia-max-height: none;
 	--pecan-xanthia-min-width: none;
 	--pecan-xanthia-min-height: var(--pecan-height);
 	--pecan-xanthia-image-size: var(--pecan-height);
-	--pecan-chunkwm-bar: 48px;
 
 /* opacity */
 	--pecan-opacity: 0.97; /* this value affects --pecan-border */
