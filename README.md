@@ -1,5 +1,5 @@
 # pecan
-![Screenshot 3](/screenshots/1.jpg)
+![Screenshot 3](/themes/default/default.jpg)
 
 A bar for macOS.  Reports — by default — the current workspace, network bandwidth, date, battery percentage and time.
 

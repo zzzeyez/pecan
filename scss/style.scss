@@ -26,7 +26,10 @@
 	
 /* size */
 	--pecan-height: 30px;
-	--pecan-xanthia-max-width: 1000px;
+	/* no variables accepted for chunk */
+	--pecan-chunkwm-bar: 32px;
+	--pecan-chunkwm-gaps: 7px;
+	--pecan-xanthia-max-width: none;
 	--pecan-xanthia-max-height: none;
 	--pecan-xanthia-min-width: none;
 	--pecan-xanthia-min-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2));

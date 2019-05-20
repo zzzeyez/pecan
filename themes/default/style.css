@@ -4,7 +4,7 @@
 :root {
   /* background colors */
   --pecan-bg: #fafafa;
-  --pecan-bg-pecanworkspace: #1e1e1e;
+  --pecan-bg-pecanworkspace: #191919;
   --pecan-bg-pecannetwork: var(--pecan-bg-pecanworkspace);
   --pecan-bg-pecandate: var(--pecan-bg-pecanworkspace);
   --pecan-bg-pecanbattery: var(--pecan-bg-pecanworkspace);
@@ -20,7 +20,10 @@
   --pecan-xanthia-fg: var(--pecan-fg-pecanworkspace);
   /* size */
   --pecan-height: 30px;
-  --pecan-xanthia-max-width: 1000px;
+  /* no variables accepted for chunk */
+  --pecan-chunkwm-bar: 32px;
+  --pecan-chunkwm-gaps: 7px;
+  --pecan-xanthia-max-width: none;
   --pecan-xanthia-max-height: none;
   --pecan-xanthia-min-width: none;
   --pecan-xanthia-min-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2));
