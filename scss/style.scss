@@ -2,7 +2,7 @@
 /* written by daniel neemann (@zzzeyez) */
 
 /* import colors */
-@import "/Users/behaviors/.cache/wal/colors.scss";
+@import "/Users/zzzeyez/.cache/wal/colors.scss";
 
 :root {
 
@@ -34,7 +34,6 @@
 	--pecan-xanthia-min-width: none;
 	--pecan-xanthia-min-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2));
 	--pecan-xanthia-image-size: calc(var(--pecan-height) - calc(var(--pecan-border) * 2));
-	--pecan-chunkwm-bar: 20px;
 
 /* opacity */
 	--pecan-opacity: 0; /* this value affects --pecan-border */

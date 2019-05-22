@@ -28,7 +28,6 @@
   --pecan-xanthia-min-width: none;
   --pecan-xanthia-min-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2));
   --pecan-xanthia-image-size: calc(var(--pecan-height) - calc(var(--pecan-border) * 2));
-  --pecan-chunkwm-bar: 20px;
   /* opacity */
   --pecan-opacity: 0;
   /* this value affects --pecan-border */
