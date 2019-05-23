@@ -17,10 +17,11 @@
   --pecan-fg-pecandate: #4f4f4f;
   --pecan-fg-pecanbattery: #fafafa;
   --pecan-fg-pecanclock: #fafafa;
-  --pecan-xanthia-fg: #FAD089;
+  --pecan-xanthia-fg: #00A8C6;
   /* size */
   --pecan-height: 42px;
   --pecan-chunkwm-bar: 42px;
+  --pecan-chunkwm-gaps: 8px;
   --pecan-xanthia-max-width: 1000px;
   --pecan-xanthia-max-height: none;
   --pecan-xanthia-min-width: none;
