@@ -17,7 +17,7 @@
   --pecan-fg-pecandate: #4f4f4f;
   --pecan-fg-pecanbattery: #fafafa;
   --pecan-fg-pecanclock: #fafafa;
-  --pecan-xanthia-fg: #00A8C6;
+  --pecan-xanthia-fg: #ECD078;
   /* size */
   --pecan-height: 42px;
   --pecan-chunkwm-bar: 42px;
@@ -68,7 +68,7 @@
   --pecan-xanthia-image-border-radius: var(--pecan-border-radius-inner);
   --pecan-xanthia-image-border: 0px;
   /* typography */
-  --pecan-font: scientifica, SF Mono, Menlo;
+  --pecan-font: SF Mono, scientifica, Menlo;
   --pecan-font-size: 11px;
   --pecan-font-style: regular;
   --pecan-line-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2));

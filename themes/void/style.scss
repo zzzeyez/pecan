@@ -26,6 +26,8 @@
 	
 /* size */
 	--pecan-height: 64px;
+	//--pecan-chunkwm-bar: 0px;
+	//--pecan-chunkwm-gaps: ;
 	--pecan-xanthia-max-width: none;
 	--pecan-xanthia-max-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2));
 	--pecan-xanthia-min-width: none;
@@ -36,8 +38,8 @@
 	--pecan-opacity: 0; /* this value affects --pecan-border */
 	--pecan-opacity-inner: 0;
 	--pecan-opacity-center: 0;
-	--pecan-xanthia-opacity: 0.85;
-	--pecan-xanthia-image-opacity: 0.85;	
+	--pecan-xanthia-opacity: 1;
+	--pecan-xanthia-image-opacity: 1;
 			
 /* alignment */
 	--pecan-alignment-top: 0;
@@ -80,8 +82,8 @@
 	--pecan-xanthia-image-border: 0px;
 	
 /* typography */
-	--pecan-font: scientifica, SF Mono, Menlo;
-	--pecan-font-size: 11px;
+	--pecan-font: SFMono-Light, scientifica, Menlo;
+	--pecan-font-size: 9px;
 	--pecan-font-style: regular;
 	--pecan-line-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2));
 	--pecan-text-padding: 3ch ;
