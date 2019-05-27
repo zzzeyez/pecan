@@ -74,7 +74,6 @@
   --pecan-font-style: regular;
   --pecan-line-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2));
   --pecan-text-padding: 3ch ;
-  --webkit-font-smoothing: none;
   --pecan-xanthia-font: var(--pecan-font);
   --pecan-xanthia-font-size: var(--pecan-font-size);
   --pecan-xanthia-font-style: var(--pecan-font-style);

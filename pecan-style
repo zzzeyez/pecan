@@ -69,7 +69,7 @@ list(){
 
 notify(){
 	if command -v notify-send >/dev/null 2>&1; then
-		notify-send "✔ pecan style $name $status"
+		notify-send "pecan style $name $status"
 	else
 		echo "pecan style $name $status"
 	fi
