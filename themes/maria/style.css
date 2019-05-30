@@ -4,7 +4,7 @@
 :root {
   /* background colors */
   --pecan-bg: #202020;
-  --pecan-bg-pecanworkspace: #D9DDD4;
+  --pecan-bg-pecanworkspace: #FDD7FB;
   --pecan-bg-pecannetwork: var(--pecan-bg);
   --pecan-bg-pecandate: var(--pecan-bg);
   --pecan-bg-pecanbattery: var(--pecan-bg);
@@ -13,11 +13,11 @@
   --pecan-xanthia-image-bg: var(--pecan-bg);
   /* foreground colors */
   --pecan-fg-pecanworkspace: #202020;
-  --pecan-fg-pecannetwork: #D9DDD4;
+  --pecan-fg-pecannetwork: #FDD7FB;
   --pecan-fg-pecandate: #484848;
-  --pecan-fg-pecanbattery: #37D6B9;
-  --pecan-fg-pecanclock: #0DBCE5;
-  --pecan-xanthia-fg: #1D7283;
+  --pecan-fg-pecanbattery: #D2D6FE;
+  --pecan-fg-pecanclock: #B7DCE3;
+  --pecan-xanthia-fg: #9BF9E1;
   /* size */
   --pecan-height: 16px;
   --pecan-xanthia-max-width: 1000px;
@@ -50,7 +50,7 @@
   --pecan-padding-left: 0px;
   --pecan-padding-right: var(--pecan-padding-left);
   --pecan-padding-v: var(--pecan-padding-left);
-  --pecan-xanthia-padding-h: calc(var(--pecan-padding-right) + calc(var(--pecan-text-padding) * 4) + 15ch + calc(3 * var(--pecan-border)));
+  --pecan-xanthia-padding-h: calc(var(--pecan-padding-right) + calc(var(--pecan-text-padding) * 4) + 14ch + calc(3 * var(--pecan-border)));
   --pecan-xanthia-padding-v: calc(var(--pecan-border) + var(--pecan-padding-v));
   --pecan-xanthia-image-padding-v: calc(var(--pecan-height) + var(--pecan-xanthia-image-padding-h));
   --pecan-xanthia-image-padding-h: 6px;

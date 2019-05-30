@@ -64,7 +64,7 @@
 	--pecan-xanthia-padding-h: calc(var(--pecan-xanthia-image-size) + var(--pecan-xanthia-image-padding-h)); 
 	--pecan-xanthia-padding-v: calc(var(--pecan-border) + var(--pecan-padding-v));
 	--pecan-xanthia-image-padding-v: var(--pecan-xanthia-padding-v);
-	--pecan-xanthia-image-padding-h: calc(var(--pecan-padding-right) + calc(var(--pecan-text-padding) * 4) + 15ch + calc(3 * var(--pecan-border)));
+	--pecan-xanthia-image-padding-h: calc(var(--pecan-padding-right) + calc(var(--pecan-text-padding) * 4) + 14ch + calc(3 * var(--pecan-border)));
 
 /* shadow */
 	--pecan-shadow: 0px 4px 10px 4px rgba(0,0,0,0.15);

@@ -6,4 +6,10 @@ else
     echo "♥"
 fi
 
-pmset -g batt | grep -o '[0-9]*%'
+battery="$(pmset -g batt | grep -o '[0-9]*%')"
+
+if [[ "${#battery}" -gt 3 ]] ; then
+	echo "$battery" | tr -d '%'
+else
+	echo "$battery"
+fi
