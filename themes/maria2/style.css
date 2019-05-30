@@ -3,7 +3,7 @@
 /* import colors */
 :root {
   /* background colors */
-  --pecan-bg: #191919;
+  --pecan-bg: #202020;
   --pecan-bg-pecanworkspace: none;
   --pecan-bg-pecannetwork: none;
   --pecan-bg-pecandate: none;
@@ -13,11 +13,11 @@
   --pecan-xanthia-image-bg: none;
   /* foreground colors */
   --pecan-fg-pecanworkspace: #fafafa;
-  --pecan-fg-pecannetwork: #4f4f4f;
-  --pecan-fg-pecandate: #4f4f4f;
+  --pecan-fg-pecannetwork: #484848;
+  --pecan-fg-pecandate: #484848;
   --pecan-fg-pecanbattery: #fafafa;
   --pecan-fg-pecanclock: #fafafa;
-  --pecan-xanthia-fg: #ECD078;
+  --pecan-xanthia-fg: #FD0560;
   /* size */
   --pecan-height: 42px;
   --pecan-chunkwm-bar: 42px;
@@ -32,7 +32,7 @@
   /* this value affects --pecan-border */
   --pecan-opacity-inner: 1;
   --pecan-opacity-center: 1;
-  --pecan-xanthia-opacity: 0;
+  --pecan-xanthia-opacity: 1;
   --pecan-xanthia-image-opacity: 1;
   /* alignment */
   --pecan-alignment-top: 0;

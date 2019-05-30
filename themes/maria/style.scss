@@ -58,7 +58,7 @@
 	--pecan-padding-left: 0px;
 	--pecan-padding-right: var(--pecan-padding-left);
 	--pecan-padding-v: var(--pecan-padding-left);
-	--pecan-xanthia-padding-h: calc(var(--pecan-padding-right) + calc(var(--pecan-text-padding) * 4) + 14ch + calc(3 * var(--pecan-border))); 
+	--pecan-xanthia-padding-h: calc(var(--pecan-padding-right) + calc(var(--pecan-text-padding) * 4) + 15ch + calc(3 * var(--pecan-border))); 
 	--pecan-xanthia-padding-v: calc(var(--pecan-border) + var(--pecan-padding-v));
 	--pecan-xanthia-image-padding-v: calc(var(--pecan-height) + var(--pecan-xanthia-image-padding-h));
 	--pecan-xanthia-image-padding-h: 6px;
@@ -80,7 +80,7 @@
 	--pecan-xanthia-image-border: 0px;
 	
 /* typography */
-	--pecan-font: scientifica, SF Mono, Menlo;
+	--pecan-font: scientifica, SF Mono, Menlo, Monospace;
 	--pecan-font-size: 11px;
 	--pecan-font-style: regular;
 	--pecan-line-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2));

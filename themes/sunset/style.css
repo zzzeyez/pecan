@@ -3,7 +3,7 @@
 /* import colors */
 :root {
   /* background colors */
-  --pecan-bg: #f7f2f7;
+  --pecan-bg: #202020;
   --pecan-bg-pecanworkspace: var(--pecan-bg);
   --pecan-bg-pecannetwork: none;
   --pecan-bg-pecandate: none;
@@ -12,12 +12,12 @@
   --pecan-xanthia-bg: var(--pecan-bg);
   --pecan-xanthia-image-bg: none;
   /* foreground colors */
-  --pecan-fg-pecanworkspace: #141522;
-  --pecan-fg-pecannetwork: #67628E;
-  --pecan-fg-pecandate: #79677c;
-  --pecan-fg-pecanbattery: #141522;
-  --pecan-fg-pecanclock: #9A69A2;
-  --pecan-xanthia-fg: #141522;
+  --pecan-fg-pecanworkspace: #fafafa;
+  --pecan-fg-pecannetwork: #FDD7FB;
+  --pecan-fg-pecandate: #484848;
+  --pecan-fg-pecanbattery: #fafafa;
+  --pecan-fg-pecanclock: #B7DCE3;
+  --pecan-xanthia-fg: #fafafa;
   /* size */
   --pecan-height: 30px;
   --pecan-xanthia-max-width: 1000px;
@@ -69,7 +69,7 @@
   --pecan-xanthia-image-border-radius-right: 0px;
   --pecan-xanthia-image-border: 0px;
   /* typography */
-  --pecan-font: scientifica, Monospace;
+  --pecan-font: scientifica, sf mono, menlo, Monospace;
   --pecan-font-size: 11px;
   --pecan-font-style: regular;
   --pecan-line-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2));
