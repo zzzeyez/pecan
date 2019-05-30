@@ -1,7 +1,9 @@
 #!/bin/bash
 
-bat(){
-	pmset -g batt | grep -o '[0-9]*%'
-}
+if pmset -g batt | grep AC &> /dev/null; then
+    echo "⚡"
+else
+    echo "♥"
+fi
 
-bat | head -c 3
+pmset -g batt | grep -o '[0-9]*%'
