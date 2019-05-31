@@ -24,7 +24,7 @@ If Übersicht is running, then the bar should appear.
 `pecan` includes a tool `pecan-style` to allow users to save and load themes.  There are, by default, a few included themes.
 
 ```
-ln -s "$HOME/Library/Application Support/Übersicht/widgets/pecan/pecan-style" "/usr/local/bin/pecan-style"
+ln -s "${HOME}/Library/Application Support/Übersicht/widgets/pecan/pecan-style" "/usr/local/bin/pecan-style"
 ```
 
 Then if you want to load the default theme,  you do it like so:
