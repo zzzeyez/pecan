@@ -78,7 +78,7 @@ brew install sassc
 And then you must change the username at the top of `scss/style.scss` to that of your own:
 
 ```
-sed -i -e "s/behaviors/$USER/g" "$HOME/Library/Application Support/Übersicht/widgets/pecan/scss/style.scss"
+sed -i '.bak' "s/zzzeyez/$USER/g" "${HOME}/Library/Application Support/Übersicht/widgets/pecan/scss/style.scss"
 ```
   
 Now you can run the script to use Wal's palettes:
