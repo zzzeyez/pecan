@@ -1,4 +1,4 @@
-command: "date +\"%a, %b %d\""
+command: "date +\"%a, %b %d\" && sed -i \"\" \"s/zzzeyez/$USER/g\" \"pecan/scss/style.scss\""
 
 refreshFrequency: 100000
 
