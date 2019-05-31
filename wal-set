@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
+sed -i '' "s/zzzeyez/$USER/g" "$(dirname "$0")/scss/style.scss"
 sassc --style expanded "$(dirname "$0")/scss/style.scss" > "$(dirname "$0")/style.css" &
 ps cax | grep bersicht > /dev/null
 if [ $? -eq 0 ]; then
-	# stupid umlaut character
-	# osascript -e 'tell application "'$(ps ax | grep sicht | awk '{print $5}' | \
-	# head -1 | cut -d/ -f3 | cut -d. -f1)'" to refresh widget id "xanthia-image-coffee"'
 	osascript -e 'tell application "Übersicht" to refresh widget id "pecan-background-coffee"'
 fi

@@ -3,8 +3,8 @@
 /* import colors */
 :root {
   /* background colors */
-  --pecan-bg: #000000;
-  --pecan-bg-pecanworkspace: #fefefe;
+  --pecan-bg: #fafafa;
+  --pecan-bg-pecanworkspace: #202020;
   --pecan-bg-pecannetwork: var(--pecan-bg-pecanworkspace);
   --pecan-bg-pecandate: var(--pecan-bg-pecanworkspace);
   --pecan-bg-pecanbattery: var(--pecan-bg-pecanworkspace);
@@ -12,7 +12,7 @@
   --pecan-xanthia-bg: var(--pecan-bg-pecanworkspace);
   --pecan-xanthia-image-bg: var(--pecan-bg-pecanworkspace);
   /* foreground colors */
-  --pecan-fg-pecanworkspace: #000000;
+  --pecan-fg-pecanworkspace: #fafafa;
   --pecan-fg-pecannetwork: var(--pecan-fg-pecanworkspace);
   --pecan-fg-pecandate: var(--pecan-fg-pecanworkspace);
   --pecan-fg-pecanbattery: var(--pecan-fg-pecanworkspace);
