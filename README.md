@@ -59,7 +59,7 @@ brew install ifstat
 
 ### Workspaces
 
-Current workspace ID can be shown on the left element if [ChunkWM](https://github.com/koekeishiya/chunkwm)(*unmaintained*) is installed, otherwise a power symbol will be shown instead. To install *ChunkWM*:
+Current workspace ID can be shown on the left element if [ChunkWM](https://github.com/koekeishiya/chunkwm) (*unmaintained*) is installed, otherwise a power symbol will be shown instead. To install *ChunkWM*:
 
 ```sh
 brew tap koekeishiya/formulae
