@@ -49,7 +49,7 @@ Because *pecan* is styled using CSS3 variables, the top lines of `style.css` can
 
 ## Optional features
 
-### Network Bandwidth
+### Ifstat
 
 Current download and upload speeds may be shown in the 2nd-to-left element via *Ifstat*. If *Ifstat* is not found, then the current WiFi network will be displayed instead. To install *Ifstat via* Homebrew:
 
@@ -57,7 +57,7 @@ Current download and upload speeds may be shown in the 2nd-to-left element via *
 brew install ifstat
 ```
 
-### Workspaces
+### ChunkWM
 
 Current workspace ID can be shown on the left element if [ChunkWM](https://github.com/koekeishiya/chunkwm) (*unmaintained*) is installed, otherwise a power symbol will be shown instead. To install *ChunkWM*:
 
