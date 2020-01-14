@@ -1,7 +1,17 @@
 #!/usr/bin/env bash
 sed -i '' "s/zzzeyez/$USER/g" "$(dirname "$0")/scss/style.scss"
 sassc --style expanded "$(dirname "$0")/scss/style.scss" > "$(dirname "$0")/style.css" &
-ps cax | grep bersicht > /dev/null
+
+# check if ubersicht is running
+ps cax | grep sicht > /dev/null
 if [ $? -eq 0 ]; then
-	osascript -e 'tell application "Übersicht" to refresh widget id "pecan-background-coffee"'
+
+	# stupid umlaut character
+	ubersicht="$(ps ax | grep sicht | awk '{print $5}' | head -1 | cut -d/ -f3 | cut -d. -f1)"
+	#if [[ "$ubersicht" = "UM-LM^Hbersicht" ]] ; then
+		#ubersicht="Übersicht"
+	#fi
+
+		#osascript -e 'tell application "$ubersicht" to refresh widget id "pecan-background-coffee"'
+osascript -e 'tell application "'$ubersicht'" to refresh widget id "pecan-background-coffee"'
 fi
