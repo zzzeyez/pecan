@@ -84,7 +84,8 @@ refresh(){
 		if [[ "$ubersicht" = "UM-LM^Hbersicht" ]] ; then
 			ubersicht="Übersicht"
 		fi
-	osascript -e 'tell application "'$ubersicht'" to refresh widget id "pecan-background-jsx"'
+	#osascript -e 'tell application "'$ubersicht'" to refresh widget id "pecan-background-jsx"'
+	osascript -e 'tell application "'$ubersicht'" to refresh'
 	else
 		echo "Ubersicht is not running."
 	fi

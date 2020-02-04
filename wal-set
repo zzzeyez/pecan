@@ -13,5 +13,6 @@ if [ $? -eq 0 ]; then
 	#fi
 
 		#osascript -e 'tell application "$ubersicht" to refresh widget id "pecan-background-jsx"'
-osascript -e 'tell application "'$ubersicht'" to refresh widget id "pecan-background-jsx"'
+#osascript -e 'tell application "'$ubersicht'" to refresh widget id "pecan-background-jsx"'
+osascript -e 'tell application "'$ubersicht'" to refresh'
 fi
