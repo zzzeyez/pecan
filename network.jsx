@@ -9,7 +9,7 @@ const render = ({ output, error }) => {
         msg = 'Loading...';
     } else {
         const up_down = output.match(/\d*\.\d*/g);
-        msg = '↓ ' + up_down[0] + ' ↑ ' + up_down[1];
+        msg = '↓ ' + format_bandwidth(up_down[0]) + ' ↑ ' + format_bandwidth(up_down[1]);
     }
 
     return (
@@ -20,5 +20,9 @@ const render = ({ output, error }) => {
         </div>
     );
 };
+
+const format_bandwidth = (bandwidth) => {
+    return Math.round((bandwidth / 125)*100)/100 + ' Mbps'
+}
 
 export { command, refreshFrequency, render };
