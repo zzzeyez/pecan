@@ -2,15 +2,20 @@ const command = "bash pecan/scripts/network";
 const refreshFrequency = 5000; // ms
 
 const render = ({ output, error }) => {
+    let msg;
     if (error) {
-        return (<div>{String(error)}</div>)
+        msg = String(error);
+    } else if (output.length === 0) {
+        msg = 'Loading...';
+    } else {
+        const up_down = output.match(/\d*\.\d*/g);
+        msg = '↓ ' + up_down[0] + ' ↑ ' + up_down[1];
     }
 
-    const up_down = output.match(/\d*\.\d*/g);
     return (
         <div class='screen'>
             <div class='pecannetwork'>
-                ↓ {up_down[0]} ↑ {up_down[1]}
+                {msg}
             </div>
         </div>
     );
