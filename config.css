@@ -1,0 +1,101 @@
+:root {
+  /* size 
+   ---------------------------------------- */
+  --height: 36px;
+
+  /* background colors 
+   ---------------------------------------- */
+  --background-base: #283237;
+  --background-workspace: #e88388;
+  --background-load: #72bef2;
+  --background-network: #283237;
+  --background-date: #283237;
+  --background-battery: #283237;
+  --background-clock: #72bef2;
+
+  /* foreground colors 
+   ---------------------------------------- */
+  --foreground-workspace: #283237;
+  --foreground-load: #283237;
+  --foreground-network: #e88388;
+  --foreground-date: #b9c0cb;
+  --foreground-battery: #dbaa79;
+  --foreground-clock: #283237;
+
+  /* alignment 
+   ---------------------------------------- */
+  --alignment-top: 0px;
+  --alignment-bottom: auto;
+
+  /* opacity 
+   ---------------------------------------- */
+  --opacity: 1;
+  --opacity-inner: 1;
+
+  /* padding 
+   ---------------------------------------- */
+  --padding-left: 0px;
+  --padding-right: 0px;
+  --padding-top: 0px;
+
+  /* shadow 
+   ---------------------------------------- */
+  --shadow: 0px 4px 10px 4px rgba(0, 0, 0, 0);
+  --shadow-inner: 0px 3px 9px 3px rgba(0, 0, 0, 0);
+
+  /* border 
+   ---------------------------------------- */
+  --border: 0px;
+  --border-radius: 0px;
+  --border-radius-inner: 0px;
+
+  /* typography 
+   ---------------------------------------- */
+  --font: SauceCodePro Nerd font, Menlo, Monospace;
+  --font-size: 12px;
+  --text-padding: 2ch;
+
+  /* xanthia
+   -------------------------------------------------------------- */
+
+  /* size 
+   ---------------------------------------- */
+  --height-xanthia: calc(
+    var(--height-xanthia-image) + var(--border-xanthia-image) * 2
+  );
+  --height-xanthia-image: calc(var(--height) - var(--border) * 2);
+
+  /* color + opacity 
+   ---------------------------------------- */
+  --background-xanthia: #283237;
+  --foreground-xanthia: #b9c0cb;
+  --opacity-xanthia: 1;
+  --time-visible-xanthia: 200s;
+
+  /* alignment - use 0 or auto to position 
+   ---------------------------------------- */
+  --alignment-right-xanthia: 0px;
+  --alignment-left-xanthia: auto;
+  --alignment-right-xanthia-image: 0px;
+  --alignment-left-xanthia-image: auto;
+
+  /* padding from edges of screen 
+   ---------------------------------------- */
+  --margin-top-xanthia: calc(var(--height) + 10px + var(--padding-top) * 2);
+  --margin-horizontal-xanthia: calc(
+    var(--height-xanthia-image) + 10px + var(--padding-left) +
+      var(--border-xanthia-image) * 2
+  );
+  --margin-top-xanthia-image: var(--margin-top-xanthia);
+  --margin-horizontal-xanthia-image: var(--padding-left);
+
+  /* border 
+   ---------------------------------------- */
+  --border-radius-right-xanthia: 0px;
+  --border-radius-left-xanthia: var(--border-radius-inner);
+  --border-radius-right-xanthia-image: var(--border-radius-inner);
+  --border-radius-left-xanthia-image: 0px;
+  --border-xanthia-image: var(--border);
+  --shadow-xanthia: var(--shadow-inner);
+  --shadow-xanthia-image: var(--shadow-inner);
+}
