@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-sed -i '' "s/zzzeyez/$USER/g" "$(dirname "$0")/scss/style.scss"
-sassc --style expanded "$(dirname "$0")/scss/style.scss" > "$(dirname "$0")/style.css" &
+sassc --style expanded "$(dirname "$0")/style.scss" > "$(dirname "$0")/style.css" &&
 
 # check if ubersicht is running
 ps cax | grep sicht > /dev/null

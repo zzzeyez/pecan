@@ -19,7 +19,7 @@ const render = ({output, error}) => {
     return (
         <div class='screen'>
             <div class="pecanload">
-                ▲ <span { ...load_class[0] }>{load[0]} </span>
+                ◇ <span { ...load_class[0] }>{load[0]} </span>
                 <span { ...load_class[1] }>{load[1]} </span>
                 <span { ...load_class[2] }>{load[2]}</span>
             </div>
