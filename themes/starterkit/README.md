@@ -1,1 +1,0 @@
-![starterkit](starterkit.jpg)

@@ -1,1 +1,0 @@
-![developer](developer.jpg)
