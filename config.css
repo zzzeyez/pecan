@@ -89,6 +89,11 @@
   --margin-top-xanthia-image: var(--margin-top-xanthia);
   --margin-horizontal-xanthia-image: var(--padding-left);
 
+  /* typography 
+   ---------------------------------------- */
+  --font-xanthia: var(--font);
+  --font-size-xanthia: var(--font-size);
+
   /* border 
    ---------------------------------------- */
   --border-radius-right-xanthia: 0px;
