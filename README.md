@@ -5,6 +5,8 @@
 
 A bar for macOS. Reports — by default — the current workspace, cpu load, network bandwidth, date, battery percentage and time.
 
+[![Support via PayPal](https://cdn.rawgit.com/twolfson/paypal-github-button/1.0.0/dist/button.svg)](https://www.paypal.me/zzzeyez/)
+
 ## Instructions
 
 *pecan* requires [Übersicht](http://tracesof.net/uebersicht/).
