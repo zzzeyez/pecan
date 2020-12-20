@@ -1,7 +1,7 @@
 /* pecan is a bar for Ubersicht */
 /* written by daniel neemann (@zzzeyez) */
 /* import colors */
-@import url(pecan.css);
+/*@import url(pecan.css);*/
 @import url(colors.css);
 :root {
   /*this changes xanthia appearance 
@@ -27,15 +27,27 @@
   );
   --default-background-xanthia: var(
     --background-xanthia,
-    var(--color4, #869bc4)
+    var(--color4, #222)
   );
   --default-foreground-xanthia: var(
     --foreground-xanthia,
-    var(--background, #f5ece3)
+    var(--background, #eee)
   );
   --default-border-radius-left-xanthia-image: 0px;
   --default-border-radius-right-xanthia: 0px;
-  --default-shadow-xanthia: 0px 4px 10px 4px rgba(0, 0, 0, 0);
+  --default-shadow-xanthia: 0px 1px 1px 1px rgba(0, 0, 0, 0.18);
+
+	/*landscape*/
+	--default-height-landscape: calc(
+		var(--height, 36px) - var(--border, 3px) * 2
+	);
+	--default-margin-landscape: calc(
+	var(--padding-top, 10px) + var(--border, 3px)
+	);
+	--default-border-landscape: var(--border, 3px);
+	--default-border-radius-landscape: var(--border-radius-inner, 3px);
+	--default-shadow-landscape: 0px 1px 1px 1px rgba(0, 0, 0, 0.18);
+
 }
 
 /* get monitor width */
@@ -46,7 +58,7 @@
 
 /* bar background */
 .pecanbackground {
-  background-color: var(--background-base, var(--background, #f5ece3));
+  background-color: var(--background-base, NONE);
   display: block;
   position: absolute;
   height: var(--height, 36px);
@@ -61,7 +73,7 @@
   margin-left: var(--padding-left, 10px);
   opacity: var(--opacity, 1);
   z-index: -1;
-  box-shadow: var(--shadow, 0px 4px 10px 4px rgba(0, 0, 0, 0.15));
+  box-shadow: var(--shadow, 0px 4px 10px 4px rgba(0, 0, 0, 0.0));
   border-top-left-radius: var(--border-radius, 4px);
   border-top-right-radius: var(--border-radius, 4px);
   border-bottom-right-radius: var(--border-radius, 4px);
@@ -88,10 +100,10 @@
 /* workspace indicator -- far left */
 .pecanworkspace {
   font: var(--font-size, 12px) var(--font, Menlo);
-  color: var(--foreground-workspace, var(--background, #f5ece3));
+  color: var(--foreground-workspace, var(--background, #eee));
   display: inline-block;
   position: absolute;
-  background-color: var(--background-workspace, var(--color1, #de7171));
+  background-color: var(--background-workspace, var(--color1, #222));
   opacity: var(--opacity-inner, 1);
   top: var(--alignment-top, 0);
   right: auto;
@@ -100,20 +112,22 @@
   padding: 0 var(--text-padding, 1ch);
   margin-top: calc(var(--padding-top, 10px) + var(--border, 3px));
   margin-bottom: calc(var(--padding-top, 10px) + var(--border, 3px));
-  margin-left: calc(var(--padding-left, 10px) + var(--border, 3px));
+  margin-left: calc(
+	var(--padding-left, 10px) + var(--border, 3px) + var(--landscape-width-total, 0px)
+	);
   line-height: calc(var(--height, 36px) - calc(var(--border, 3px) * 2));
   border-top-left-radius: var(--border-radius-inner, 3px);
   border-top-right-radius: var(--border-radius-inner, 3px);
   border-bottom-right-radius: var(--border-radius-inner, 3px);
   border-bottom-left-radius: var(--border-radius-inner, 3px);
-  box-shadow: var(--shadow-inner, 0px 1px 1px 1px rgba(0, 0, 0, 0));
+  box-shadow: var(--shadow-inner, 0px 1px 1px 1px rgba(0, 0, 0, 0.18));
 }
 
 /* load -- 2nd to the left */
 .pecanload {
   font: var(--font-size, 12px) var(--font, Menlo);
-  color: var(--foreground-load, var(--background, #f5ece3));
-  background-color: var(--background-load, var(--color2, #67c698));
+  color: var(--foreground-load, var(--background, #eee));
+  background-color: var(--background-load, var(--color2, #222));
   opacity: var(--opacity-inner, 1);
   position: absolute;
   display: inline-block;
@@ -126,6 +140,7 @@
   margin-top: calc(var(--border, 3px) + var(--padding-top, 10px));
   margin-bottom: calc(var(--border, 3px) + var(--padding-top, 10px));
   margin-left: calc(
+		var(--landscape-width-total, 0px) + 
     var(--padding-left, 10px) + calc(var(--text-padding, 1ch) * 2) + 1ch +
       calc(var(--border, 3px) * 2)
   );
@@ -134,7 +149,7 @@
   border-top-right-radius: var(--border-radius-inner, 3px);
   border-bottom-right-radius: var(--border-radius-inner, 3px);
   border-bottom-left-radius: var(--border-radius-inner, 3px);
-  box-shadow: var(--shadow-inner, 0px 1px 1px 1px rgba(0, 0, 0, 0));
+  box-shadow: var(--shadow-inner, 0px 1px 1px 1px rgba(0, 0, 0, 0.18));
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -155,9 +170,9 @@
 /* network -- 3rd to left */
 .pecannetwork {
   font: var(--font-size, 12px) var(--font, Menlo);
-  background-color: var(--background-network, var(--color3, #ff9a73));
+  background-color: var(--background-network, var(--color3, #222));
   opacity: var(--opacity-inner, 1);
-  color: var(--foreground-network, var(--background, #f5ece3));
+  color: var(--foreground-network, var(--background, #eee));
   position: absolute;
   display: inline-block;
   top: var(--alignment-top, 0);
@@ -168,6 +183,7 @@
   margin-top: calc(var(--border, 3px) + var(--padding-top, 10px));
   margin-bottom: calc(var(--border, 3px) + var(--padding-top, 10px));
   margin-left: calc(
+		var(--landscape-width-total, 0px) + 
     var(--padding-left, 10px) + calc(var(--text-padding, 1ch) * 4) + 1ch +
       calc(var(--border, 3px) * 3) + 16ch
   );
@@ -176,14 +192,14 @@
   border-top-right-radius: var(--border-radius-inner, 3px);
   border-bottom-right-radius: var(--border-radius-inner, 3px);
   border-bottom-left-radius: var(--border-radius-inner, 3px);
-  box-shadow: var(--shadow-inner, 0px 1px 1px 1px rgba(0, 0, 0, 0));
+  box-shadow: var(--shadow-inner, 0px 1px 1px 1px rgba(0, 0, 0, 0.18));
 }
 
 /* date -- center */
 .pecandate {
   font: var(--font-size, 12px) var(--font, Menlo);
-  color: var(--foreground-date, var(--color7, #d8cfc7));
-  background-color: var(--background-date, var(--background, #f5ece3));
+  color: var(--foreground-date, var(--color7, #eee));
+  background-color: var(--background-date, var(--background, #222));
   opacity: var(--opacity-inner, 1);
   position: absolute;
   display: inline-block;
@@ -200,16 +216,16 @@
   border-top-right-radius: var(--border-radius-inner, 3px);
   border-bottom-right-radius: var(--border-radius-inner, 3px);
   border-bottom-left-radius: var(--border-radius-inner, 3px);
-  box-shadow: var(--shadow-inner, 0px 1px 1px 1px rgba(0, 0, 0, 0));
+  box-shadow: var(--shadow-inner, 0px 1px 1px 1px rgba(0, 0, 0, 0.18));
 }
 
 /* battery percentage -- 2nd to right */
 .pecanbattery {
   font: var(--font-size, 12px) var(--font, Menlo);
-  color: var(--foreground-battery, var(--background, #f5ece3));
+  color: var(--foreground-battery, var(--background, #eee));
   display: inline-block;
   position: absolute;
-  background-color: var(--background-battery, var(--color5, #849199));
+  background-color: var(--background-battery, var(--color5, #222));
   opacity: var(--opacity-inner, 1);
   padding: 0 var(--text-padding, 1ch);
   top: var(--alignment-top, 0);
@@ -227,16 +243,16 @@
   border-top-right-radius: var(--border-radius-inner, 3px);
   border-bottom-right-radius: var(--border-radius-inner, 3px);
   border-bottom-left-radius: var(--border-radius-inner, 3px);
-  box-shadow: var(--shadow-inner, 0px 1px 1px 1px rgba(0, 0, 0, 0));
+  box-shadow: var(--shadow-inner, 0px 1px 1px 1px rgba(0, 0, 0, 0.18));
 }
 
 /* clock -- far right */
 .pecanclock {
   font: var(--font-size, 12px) var(--font, Menlo);
-  color: var(--foreground-clock, var(--background, #f5ece3));
+  color: var(--foreground-clock, var(--background, #eee));
   display: inline-block;
   position: absolute;
-  background-color: var(--background-clock, var(--color6, #8cbed6));
+  background-color: var(--background-clock, var(--color6, #222));
   opacity: var(--opacity-inner, 1);
   padding: 0 var(--text-padding, 1ch);
   margin: var(--border, 3px);
@@ -252,5 +268,5 @@
   border-top-right-radius: var(--border-radius-inner, 3px);
   border-bottom-right-radius: var(--border-radius-inner, 3px);
   border-bottom-left-radius: var(--border-radius-inner, 3px);
-  box-shadow: var(--shadow-inner, 0px 1px 1px 1px rgba(0, 0, 0, 0));
+  box-shadow: var(--shadow-inner, 0px 1px 1px 1px rgba(0, 0, 0, 0.18));
 }
