@@ -1,8 +1,13 @@
 /* pecan is a bar for Ubersicht */
 /* written by daniel neemann (@zzzeyez) */
+
 /* import colors */
-/*@import url(pecan.css);*/
 @import url(colors.css);
+
+/* import config */
+/* place the included config.css at ~/.config/pecan.css to make your own */
+@import url(pecan.css);
+
 :root {
   /*this changes xanthia appearance 
   when pecan is running with no config */

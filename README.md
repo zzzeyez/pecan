@@ -25,6 +25,10 @@ If Übersicht is running, then the bar should appear.
 
 ## Customization & Themes
 
+![Screenshot 4](/screenshots/4.jpg)
+
+This is a picture of my current config with all optional features enabled.
+
 To edit the appearance you can place a config at `~/.config/pecan.css` – the included `config.css` can be placed there to discover options.
 
 ```sh

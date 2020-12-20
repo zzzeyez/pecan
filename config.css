@@ -5,22 +5,22 @@
 
   /* background colors 
    ---------------------------------------- */
-  --background-base: #283237;
-  --background-workspace: #e88388;
-  --background-load: #72bef2;
-  --background-network: #283237;
-  --background-date: #283237;
-  --background-battery: #283237;
-  --background-clock: #72bef2;
+  --background-base: var(--background, #222);
+  --background-workspace: var(--color1, #222);
+  --background-load: var(--background, #222);
+  --background-network: var(--background, #222);
+  --background-date: var(--background, #222);
+  --background-battery: var(--background, #222);
+  --background-clock: var(--color6, #222);
 
   /* foreground colors 
    ---------------------------------------- */
-  --foreground-workspace: #283237;
-  --foreground-load: #283237;
-  --foreground-network: #e88388;
-  --foreground-date: #b9c0cb;
-  --foreground-battery: #dbaa79;
-  --foreground-clock: #283237;
+  --foreground-workspace: var(--color0, #fff);
+  --foreground-load: var(--color1, #fff);
+  --foreground-network: var(--color8, #fff);
+  --foreground-date: var(--color8, #fff);
+  --foreground-battery: var(--color6, #fff);
+  --foreground-clock: var(--color0, #fff);
 
   /* alignment 
    ---------------------------------------- */
@@ -34,7 +34,10 @@
 
   /* padding 
    ---------------------------------------- */
-  --padding-left: 0px;
+	/*--padding-left: calc(*/
+	/*var(--landscape-width) - 58px*/
+	/*);*/
+	--padding-left: 0px;
   --padding-right: 0px;
   --padding-top: 0px;
 
@@ -51,7 +54,7 @@
 
   /* typography 
    ---------------------------------------- */
-  --font: SauceCodePro Nerd font, Menlo, Monospace;
+  --font: OperatorMonoNerdFontComplete-Book, Menlo, Monospace;
   --font-size: 12px;
   --text-padding: 2ch;
 
@@ -61,16 +64,16 @@
   /* size 
    ---------------------------------------- */
   --height-xanthia: calc(
-    var(--height-xanthia-image) + var(--border-xanthia-image) * 2
-  );
-  --height-xanthia-image: calc(var(--height) - var(--border) * 2);
+  var(--height) - var(--border) * 2
+  );    
+  --height-xanthia-image: 200px;
 
   /* color + opacity 
    ---------------------------------------- */
-  --background-xanthia: #283237;
-  --foreground-xanthia: #b9c0cb;
+  --background-xanthia: var(--background);
+  --foreground-xanthia: var(--color5);
   --opacity-xanthia: 1;
-  --time-visible-xanthia: 200s;
+  --time-visible-xanthia: auto;
 
   /* alignment - use 0 or auto to position 
    ---------------------------------------- */
@@ -81,26 +84,37 @@
 
   /* padding from edges of screen 
    ---------------------------------------- */
-  --margin-top-xanthia: calc(var(--height) + 10px + var(--padding-top) * 2);
-  --margin-horizontal-xanthia: calc(
-    var(--height-xanthia-image) + 10px + var(--padding-left) +
-      var(--border-xanthia-image) * 2
+  --margin-top-xanthia: calc(
+    var(--border) + var(--padding-top)
   );
-  --margin-top-xanthia-image: var(--margin-top-xanthia);
-  --margin-horizontal-xanthia-image: var(--padding-left);
+  --margin-horizontal-xanthia: calc(
+    var(--padding-right) + var(--border) * 3 +
+      var(--text-padding) * 4 + 14ch
+  );
+  --margin-top-xanthia-image: calc(var(--height) + 10px + var(--padding-top) * 2);
+  --margin-horizontal-xanthia-image: 10px;
 
   /* typography 
    ---------------------------------------- */
-  --font-xanthia: var(--font);
+  --font-xanthia: OperatorMonoNerdFontComplete-Book, Menlo, Monospace;
   --font-size-xanthia: var(--font-size);
 
   /* border 
    ---------------------------------------- */
-  --border-radius-right-xanthia: 0px;
+  --border-radius-right-xanthia: var(--border-radius-inner);
   --border-radius-left-xanthia: var(--border-radius-inner);
-  --border-radius-right-xanthia-image: var(--border-radius-inner);
-  --border-radius-left-xanthia-image: 0px;
+  --border-radius-right-xanthia-image: 3px;
+  --border-radius-left-xanthia-image: 3px;
   --border-xanthia-image: var(--border);
   --shadow-xanthia: var(--shadow-inner);
   --shadow-xanthia-image: var(--shadow-inner);
+
+  /* landscape
+   -------------------------------------------------------------- */
+
+	/*--background-landscape: ;*/
+	/*--border-landscape: ;*/
+	/*--margin-landscape: ;*/
+	/*--border-radius-landscape: ;*/
+	/*--shadow-landscape: ;*/
 }
