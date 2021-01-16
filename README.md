@@ -29,10 +29,10 @@ If Übersicht is running, then the bar should appear.
 
 This is a picture of my current config with all optional features enabled.
 
-To edit the appearance you can place a config at `~/.config/pecan.css` – the included `config.css` can be placed there to discover options.
+To edit the appearance you can place a config at `~/.config/pecan/pecan.css` – the included `config.css` can be placed there to discover options.
 
 ```sh
-mv "$HOME/Library/Application Support/Übersicht/widgets/pecan/config.css" "${HOME}/.config/pecan.css"
+mkdir -p "$HOME/.config/pecan" && mv "$HOME/Library/Application Support/Übersicht/widgets/pecan/config.css" "$HOME/.config/pecan/pecan.css"
 ```
 
 ## Optional features
