@@ -5,7 +5,7 @@
 @import url(colors.css);
 
 /* import config */
-/* place the included config.css at ~/.config/pecan.css to make your own */
+/* place the included config.css at ~/.config/pecan/pecan.css to make your own */
 @import url(pecan.css);
 
 :root {
