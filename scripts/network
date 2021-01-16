@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-[[ -f "${HOME}/.config/pecan.css" ]] && [[ ! -f "$PWD/pecan/pecan.css" ]] && ln -s "${HOME}/.config/pecan.css" "${PWD}/pecan/pecan.css" && osascript -e "tell application id \"tracesOf.Uebersicht\" to refresh"
+[[ -f "${HOME}/.config/pecan/pecan.css" ]] && [[ ! -f "$PWD/pecan/pecan.css" ]] && ln -s "${HOME}/.config/pecan/pecan.css" "${PWD}/pecan/pecan.css" && osascript -e "tell application id \"tracesOf.Uebersicht\" to refresh"
 [[ -f "${HOME}/.cache/wal/colors.css" ]] && [[ ! -f "$PWD/pecan/colors.css" ]] && ln -s "${HOME}/.cache/wal/colors.css" "${PWD}/pecan/colors.css" && osascript -e "tell application id \"tracesOf.Uebersicht\" to refresh"
 
 exists () {
