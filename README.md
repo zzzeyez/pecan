@@ -17,7 +17,7 @@ This can be done via the terminal like so:
 
 ```sh
 brew tap caskroom/cask
-brew cask install ubersicht
+brew install --cask ubersicht
 git clone https://github.com/zzzeyez/pecan.git "$HOME/Library/Application Support/Übersicht/widgets/pecan"
 ```
 
