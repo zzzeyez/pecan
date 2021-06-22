@@ -9,7 +9,7 @@
 @import url(pecan.css);
 
 :root {
-  /*this changes xanthia appearance 
+  /*this changes xanthia appearance
   when pecan is running with no config */
   --default-xanthia-font-size: 12px;
   --default-xanthia-font-family: Menlo;
@@ -145,7 +145,7 @@
   margin-top: calc(var(--border, 3px) + var(--padding-top, 10px));
   margin-bottom: calc(var(--border, 3px) + var(--padding-top, 10px));
   margin-left: calc(
-		var(--landscape-width-total, 0px) + 
+		var(--landscape-width-total, 0px) +
     var(--padding-left, 10px) + calc(var(--text-padding, 1ch) * 2) + 1ch +
       calc(var(--border, 3px) * 2)
   );
@@ -188,7 +188,7 @@
   margin-top: calc(var(--border, 3px) + var(--padding-top, 10px));
   margin-bottom: calc(var(--border, 3px) + var(--padding-top, 10px));
   margin-left: calc(
-		var(--landscape-width-total, 0px) + 
+		var(--landscape-width-total, 0px) +
     var(--padding-left, 10px) + calc(var(--text-padding, 1ch) * 4) + 1ch +
       calc(var(--border, 3px) * 3) + 16ch
   );
@@ -269,6 +269,30 @@
   margin-right: calc(var(--border, 3px) + var(--padding-right, 10px));
   margin-bottom: calc(var(--padding-top, 10px) + var(--border, 3px));
   line-height: calc(var(--height, 36px) - calc(var(--border, 3px) * 2));
+  border-top-left-radius: var(--border-radius-inner, 3px);
+  border-top-right-radius: var(--border-radius-inner, 3px);
+  border-bottom-right-radius: var(--border-radius-inner, 3px);
+  border-bottom-left-radius: var(--border-radius-inner, 3px);
+  box-shadow: var(--shadow-inner, 0px 1px 1px 1px rgba(0, 0, 0, 0.18));
+}
+
+/* cputemp -- 4th to the left */
+.pecan-cpu-temp {
+  font: var(--font-size, 12px) var(--font, Inconsolata);
+  color: var(--foreground-date, var(--color7, #eee));
+  background-color: var(--background-date, var(--background, #222));
+  opacity: var(--opacity-inner, 1);
+  position: absolute;
+  display: inline-block;
+  padding: 0 var(--text-padding, 1ch);
+  width: auto;
+  top: var(--alignment-top, 0);
+  bottom: var(--alignment-bottom, auto);
+  left: 16%;
+  transform: translate(-16%);
+  margin: calc(var(--padding-top, 10px) + var(--border, 3px));
+  line-height: calc(var(--height, 36px) - calc(var(--border, 3px) * 2));
+  text-align: center;
   border-top-left-radius: var(--border-radius-inner, 3px);
   border-top-right-radius: var(--border-radius-inner, 3px);
   border-bottom-right-radius: var(--border-radius-inner, 3px);
