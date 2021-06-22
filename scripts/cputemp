@@ -1,0 +1,4 @@
+#!/bin/bash
+
+CELSIUS=$(/usr/local/bin/osx-cpu-temp)
+echo "$CELSIUS"
