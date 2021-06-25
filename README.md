@@ -63,7 +63,7 @@ brew install yabai
 
 ### landscape
 
-*landscape* is a workspace selector.  If *landscape* is installed then it will display clickablle images of available workspaces on the left. *landscape* will use *pecan*'s config at `~/.config/pecan.css`.  Install [*landscape*](https://github.com/zzzeyez/xanthia/blob/master/README.md#Installation).
+*landscape* is a workspace selector.  If *landscape* is installed then it will display clickablle images of available workspaces on the left. *landscape* will use *pecan*'s config at `~/.config/pecan.css`.  Install [*landscape*](https://github.com/zzzeyez/landscape/blob/main/README.md#installation-and-requirements).
 
 ### pywal
 
